@@ -5,7 +5,7 @@
 ** Login   <guillaume.mardon@epitech.eu>
 **
 ** Started on  Mon Oct 24 10:02:37 2016 Guillaume MARDON
-** Last update Mon Oct 24 11:13:44 2016 Guillaume MARDON
+** Last update Mon Oct 24 11:18:25 2016 Guillaume MARDON
 */
 #include <stdio.h>
 #include <stdlib.h>
@@ -35,21 +35,24 @@ char	*multiply_inf(char *val1, char *val2)
 
 char	*add_inf(char *val1, char *val2)
 {
-  int	index;
+  int	indexVal1;
+  int	indexVal2;
   char	*result;
   int	value;
   char	retained;
-  int maxLen;
+  int 	maxLen;
 
   maxLen = (my_strlen(val2) < my_strlen(val1) ? my_strlen(val1) : my_strlen(val2));
   result = malloc(8 * (maxLen) + 1));
 
-  index = maxLen;
+  indexVal1 = my_strlen(val1);
+  indexVal2 = my_strlen(val2);
   retained = 0;
-  while (index > 0)
+  while (indexVal1 > 0 && indexVal2 > 0)
     {
-      index--;
-      value = (val1[index] - 48) + (val2[index] - 48) + retained;
+      indexVal1--;
+      indexVal2--;
+      value = (val1[indexVal1] - 48) + (val2[indexVal2] - 48) + retained;
       if (value >= 10)
 	{
 	  retained = value / 10;
