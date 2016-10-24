@@ -5,7 +5,7 @@
 ## Login   <victor.le-dantec@epitech.net>
 ## 
 ## Started on  Fri Oct 14 13:53:29 2016 Victor Le Dantec
-## Last update Mon Oct 24 10:38:09 2016 Victor Le Dantec
+## Last update Mon Oct 24 12:26:14 2016 Victor Le Dantec
 ##
 NAME	=	libmy.a
 
@@ -49,15 +49,15 @@ RM	=	rm -f
 all:	$(NAME)
 
 $(NAME):
-	gcc -w -c $(SRC)
-	ar rc $(NAME) $(OBJ)
-	mv libmy.a ../
+	@gcc -w -c $(SRC) && echo "Compiling .o .."
+	@ar rc $(NAME) $(OBJ) && echo "Compiling libmy.a .."
+	@mv libmy.a ../ && echo "Moving library to ./lib .."
 
 clean:
-	$(RM) $(OBJ)
-	$(RM) #Makefile#
+	@find ./ \( -name "*.o" -o -name "#*#" \) -exec echo "Cleaned {}" \; -exec rm -f -r "{}" \;
 
 fclean:	clean
-	$(RM) ../$(NAME)
+	@$(RM) ../$(NAME)
+	@echo "Cleaned libmy.a .."
 
 re:	fclean all
