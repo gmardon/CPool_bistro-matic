@@ -5,7 +5,7 @@
 ## Login   <victor.le-dantec@epitech.net>
 ##
 ## Started on  Mon Oct 24 10:23:27 2016 Victor Le Dantec
-## Last update Mon Oct 24 14:38:39 2016 Victor Le Dantec
+## Last update Mon Oct 24 15:40:49 2016 Victor Le Dantec
 ##
 NAME		=	calc
 
@@ -37,6 +37,6 @@ fclean:	clean
 re:	fclean all
 
 lul:
-ifeq ($(USER), moana.dumora)
+ifeq ($(USER), guillaume.mardon)
 	xrandr --output eDP-1 --rotate left
 endif
