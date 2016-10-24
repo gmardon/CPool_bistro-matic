@@ -5,7 +5,7 @@
 ** Login   <moana.dumora@epitech.eu@epitech.eu>
 **
 ** Started on  Mon Oct 24 13:42:29 2016 Moana Dumora
-** Last update Mon Oct 24 15:16:05 2016 Moana Dumora
+** Last update Mon Oct 24 16:38:36 2016 Moana Dumora
 */
 
 char	*int_to_string(int nb)
@@ -23,6 +23,7 @@ char	*int_to_string(int nb)
     }
   (nb < 0) ? i++ : 0;
   str = malloc(8 * (i + 1));
+  (nb == 0) ? str[0] = '0' : 0;
   (nb < 0) ? str[0] = '-' : 0;
   (nb < 0) ? nb = nb * -1 : 0;
   while (i > 1)
