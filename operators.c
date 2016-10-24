@@ -5,7 +5,7 @@
 ** Login   <guillaume.mardon@epitech.eu>
 **
 ** Started on  Mon Oct 24 10:02:37 2016 Guillaume MARDON
-** Last update Mon Oct 24 10:37:40 2016 Guillaume MARDON
+** Last update Mon Oct 24 10:40:40 2016 Guillaume MARDON
 */
 #include <stdio.h>
 #include <stdlib.h>
@@ -22,11 +22,11 @@ char	*multiply_inf(char *val1, char *val2)
   indexVal1 = 0;
   while (indexVal1 < my_strlen(val1))
     {
-      indexVal2 = my_strlen(val2) - 1;
-      while (indexVal2 != 0)
+      indexVal2 = my_strlen(val2);
+      while (indexVal2 > 0)
 	{
-	  printf("%d x %d = %d\n", (val1[indexVal1] - 48), (val2[indexVal2] - 48), (val1[indexVal1] - 48) * (val2[indexVal2] - 48));
 	  indexVal2--;
+	  printf("%d x %d = %d\n", (val1[indexVal1] - 48), (val2[indexVal2] - 48), (val1[indexVal1] - 48) * (val2[indexVal2] - 48
 	}
       // ADD ONE 0
       indexVal1++;
