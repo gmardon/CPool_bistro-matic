@@ -1,11 +1,11 @@
 ##
 ## Makefile for BistroMakeTicFile in /home/victor.le-dantec/CPool_bistro-matic
-## 
+##
 ## Made by Victor Le Dantec
 ## Login   <victor.le-dantec@epitech.net>
-## 
+##
 ## Started on  Mon Oct 24 10:23:27 2016 Victor Le Dantec
-## Last update Mon Oct 24 12:37:18 2016 Victor Le Dantec
+## Last update Mon Oct 24 13:59:41 2016 Moana Dumora
 ##
 NAME		=	calc
 
