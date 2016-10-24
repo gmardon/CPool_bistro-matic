@@ -5,7 +5,7 @@
 ** Login   <guillaume.mardon@epitech.eu>
 **
 ** Started on  Mon Oct 24 10:02:37 2016 Guillaume MARDON
-** Last update Mon Oct 24 12:51:42 2016 Guillaume MARDON
+** Last update Mon Oct 24 12:46:30 2016 Victor Le Dantec
 */
 #include <stdio.h>
 #include <stdlib.h>
@@ -51,8 +51,12 @@ char	*add_inf(char *val1, char *val2)
       indexVal1--;
       indexVal2--;
       index--;
-      value = (indexVal1 < 0 ? (val2[indexVal2] - 48) : 0) + retained;
-      value += (indexVal2 < 0 ? (val1[indexVal1] - 48) : 0);
+      if (indexVal1 < 0)
+	value = (val2[indexVal2] - 48) + retained;
+      else if (indexVal2 < 0)
+	value = (val1[indexVal1] - 48) + retained;
+      else
+	value = (val1[indexVal1] - 48) + (val2[indexVal2] - 48) + retained;
       if (value >= 10)
 	{
 	  retained = value / 10;
