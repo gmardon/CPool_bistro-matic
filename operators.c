@@ -5,11 +5,10 @@
 ** Login   <guillaume.mardon@epitech.eu>
 **
 ** Started on  Mon Oct 24 10:02:37 2016 Guillaume MARDON
-** Last update Mon Oct 24 12:42:34 2016 Guillaume MARDON
+** Last update Mon Oct 24 12:46:30 2016 Victor Le Dantec
 */
 #include <stdio.h>
 #include <stdlib.h>
-#include "my_strlen.c"
 
 char	*multiply_inf(char *val1, char *val2)
 {
