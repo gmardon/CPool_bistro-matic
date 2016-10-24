@@ -5,7 +5,7 @@
 ** Login   <guillaume.mardon@epitech.eu>
 **
 ** Started on  Mon Oct 24 10:02:37 2016 Guillaume MARDON
-** Last update Mon Oct 24 14:25:51 2016 Guillaume MARDON
+** Last update Mon Oct 24 14:44:37 2016 Guillaume MARDON
 */
 #include <stdio.h>
 #include <stdlib.h>
@@ -57,10 +57,12 @@ char	*multiply_inf(char *val1, char *val2)
 	{
 	  indexVal2--;
 	  value = (val1[indexVal1] - 48) * (val2[indexVal2] - 48);
+	  value *= (indexVal1 == 0 ? 1 : my_power_rec(10, indexVal1));
+	  printf("value: %d\n", (val1[indexVal1] - 48));
+	  printf("%d x %d = %d\n", (val1[indexVal1] - 48), (val2[indexVal2] - 48), (val1[indexVal1] - 48) * (val2[indexVal2] - 48));
+	  printf("from: %d, to: '%s'\n", value, int_to_string(value));
 	  result = add_inf(result, int_to_string(value));
-	  printf("result: %s", result);
 	}
-      // ADD ONE 0
       indexVal1++;
     }
   return (result);
