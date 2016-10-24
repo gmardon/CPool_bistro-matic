@@ -5,7 +5,7 @@
 ** Login   <guillaume.mardon@epitech.eu>
 **
 ** Started on  Mon Oct 24 10:02:37 2016 Guillaume MARDON
-** Last update Mon Oct 24 11:08:13 2016 Guillaume MARDON
+** Last update Mon Oct 24 11:13:44 2016 Guillaume MARDON
 */
 #include <stdio.h>
 #include <stdlib.h>
@@ -39,10 +39,12 @@ char	*add_inf(char *val1, char *val2)
   char	*result;
   int	value;
   char	retained;
+  int maxLen;
 
-  result = malloc(8 * ((my_strlen(val2) < my_strlen(val1) ? my_strlen(val1) : my_strlen(val2)) + 1));
+  maxLen = (my_strlen(val2) < my_strlen(val1) ? my_strlen(val1) : my_strlen(val2));
+  result = malloc(8 * (maxLen) + 1));
 
-  index = my_strlen(val1);
+  index = maxLen;
   retained = 0;
   while (index > 0)
     {
