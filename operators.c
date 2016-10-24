@@ -5,7 +5,7 @@
 ** Login   <guillaume.mardon@epitech.eu>
 **
 ** Started on  Mon Oct 24 10:02:37 2016 Guillaume MARDON
-** Last update Mon Oct 24 10:53:18 2016 Guillaume MARDON
+** Last update Mon Oct 24 11:08:13 2016 Guillaume MARDON
 */
 #include <stdio.h>
 #include <stdlib.h>
@@ -35,21 +35,25 @@ char	*multiply_inf(char *val1, char *val2)
 
 char	*add_inf(char *val1, char *val2)
 {
-  int	indexVal1;
-  int 	indexVal2;
+  int	index;
   char	*result;
+  int	value;
+  char	retained;
 
   result = malloc(8 * ((my_strlen(val2) < my_strlen(val1) ? my_strlen(val1) : my_strlen(val2)) + 1));
 
-  indexVal1 = my_strlen(val1);
-  while (indexVal1 > 0)
+  index = my_strlen(val1);
+  retained = 0;
+  while (index > 0)
     {
-      indexVal1--;
-      indexVal2 = my_strlen(val2);
-      while (indexVal2 > 0)
+      index--;
+      value = (val1[index] - 48) + (val2[index] - 48) + retained;
+      if (value >= 10)
 	{
-	  indexVal2--;
-	  printf("%d + %d = %d\n", (val1[indexVal1] - 48), (val2[indexVal2] - 48), (val1[indexVal1] - 48) + (val2[indexVal2] - 48));
+	  retained = value / 10;
+	  value = value % 10;
 	}
+      result[index] = value + 48;
     }
+  return (result);
 }
