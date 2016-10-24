@@ -5,11 +5,11 @@
 ** Login   <guillaume.mardon@epitech.eu>
 **
 ** Started on  Mon Oct 24 10:03:22 2016 Guillaume MARDON
-** Last update Mon Oct 24 11:14:10 2016 Guillaume MARDON
+** Last update Mon Oct 24 12:44:23 2016 Guillaume MARDON
 */
 #include "operators.c"
 
 int	main(int argc, char *argv)
 {
-  add_inf("1234567897654567845678909045", "1234567897654567845678909045");
+  printf("456789098765478 + 93749026462893 = %s", add_inf("456789098765478", "93749026462893"));
 }
