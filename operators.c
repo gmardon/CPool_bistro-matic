@@ -5,7 +5,7 @@
 ** Login   <guillaume.mardon@epitech.eu>
 **
 ** Started on  Mon Oct 24 10:02:37 2016 Guillaume MARDON
-** Last update Mon Oct 24 10:35:44 2016 Guillaume MARDON
+** Last update Mon Oct 24 10:37:40 2016 Guillaume MARDON
 */
 #include <stdio.h>
 #include <stdlib.h>
@@ -28,6 +28,7 @@ char	*multiply_inf(char *val1, char *val2)
 	  printf("%d x %d = %d\n", (val1[indexVal1] - 48), (val2[indexVal2] - 48), (val1[indexVal1] - 48) * (val2[indexVal2] - 48));
 	  indexVal2--;
 	}
+      // ADD ONE 0
       indexVal1++;
     }
 }
