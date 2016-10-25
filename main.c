@@ -5,11 +5,11 @@
 ** Login   <guillaume.mardon@epitech.eu>
 **
 ** Started on  Mon Oct 24 10:03:22 2016 Guillaume MARDON
-** Last update Mon Oct 24 14:25:27 2016 Guillaume MARDON
+** Last update Tue Oct 25 09:11:22 2016 Victor Le Dantec
 */
 #include "operators.c"
 
 int	main(int argc, char *argv)
 {
-  multiply_inf("10", "10");
+  my_putstr(add_inf("700", "300"));
 }
