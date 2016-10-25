@@ -5,7 +5,7 @@
 ** Login   <guillaume.mardon@epitech.eu>
 **
 ** Started on  Mon Oct 24 10:03:22 2016 Guillaume MARDON
-** Last update Tue Oct 25 15:15:24 2016 Guillaume MARDON
+** Last update Tue Oct 25 16:22:17 2016 Guillaume MARDON
 */
 #include "operators.c"
 

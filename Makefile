@@ -5,7 +5,7 @@
 ## Login   <victor.le-dantec@epitech.net>
 ##
 ## Started on  Mon Oct 24 10:23:27 2016 Victor Le Dantec
-## Last update Mon Oct 24 16:35:31 2016 Moana Dumora
+## Last update Tue Oct 25 16:21:27 2016 Guillaume MARDON
 ##
 NAME		=	calc
 
