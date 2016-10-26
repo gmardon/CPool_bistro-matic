@@ -5,7 +5,7 @@
 ** Login   <guillaume.mardon@epitech.eu>
 **
 ** Started on  Mon Oct 24 10:02:37 2016 Guillaume MARDON
-** Last update Wed Oct 26 07:01:59 2016 Guillaume MARDON
+** Last update Wed Oct 26 07:51:40 2016 Guillaume MARDON
 */
 #include <stdio.h>
 #include <stdlib.h>
@@ -31,6 +31,34 @@ char	*add_inf(char *val1, char *val2)
     {
       value = (val1[index] - 48) + (val2[index] - 48) + retained;
       retained = (value >= 10 ? value / 10 : 0);
+      value = (value >= 10 ? value % 10 : value);
+      result[index] = value + 48;
+      index--;
+    }
+  return result;
+}
+
+char	*minus_inf(char *val1, char *val2)
+{
+  char	*result;
+  int	index;
+  int	length;
+  int	value;
+  int	retained;
+
+  if (my_strlen(val1) < my_strlen(val2))
+    val1 = equalise_numbers(val1, val2);
+  else if (my_strlen(val1) > my_strlen(val2))
+    val2 = equalise_numbers(val1, val2);
+  length = my_strlen(val1);
+  result = malloc(8 * (length + 1));
+  index = length - 1;
+  retained = 0;
+  while (index > -1)
+    {
+      value = (val1[index] - 48) - ((val2[index] - 48) + retained);
+      if (value < 0)
+	  value = ((val1[index] - 48) + 10) - ((val2[index] - 48) + retained++);
       value = (value >= 10 ? value % 10 : value);
       result[index] = value + 48;
       index--;

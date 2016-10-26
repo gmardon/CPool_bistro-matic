@@ -5,11 +5,11 @@
 ** Login   <guillaume.mardon@epitech.eu>
 **
 ** Started on  Mon Oct 24 10:03:22 2016 Guillaume MARDON
-** Last update Tue Oct 25 20:44:56 2016 Guillaume MARDON
+** Last update Wed Oct 26 07:31:12 2016 Guillaume MARDON
 */
 #include "operators.c"
 
 int	main(int argc, char *argv)
 {
-  printf("result: %s", multiply_inf("334", "73"));
+  printf("result: %s", minus_inf("334", "73"));
 }
