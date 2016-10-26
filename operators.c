@@ -5,7 +5,7 @@
 ** Login   <guillaume.mardon@epitech.eu>
 **
 ** Started on  Mon Oct 24 10:02:37 2016 Guillaume MARDON
-** Last update Tue Oct 25 21:18:02 2016 Guillaume MARDON
+** Last update Wed Oct 26 07:00:11 2016 Guillaume MARDON
 */
 #include <stdio.h>
 #include <stdlib.h>
@@ -58,7 +58,7 @@ char	*add_inf(char *val1, char *val2)
 
   if (my_strlen(val1) < my_strlen(val2))
     val1 = equalise_numbers(val1, val2);
-  else if(my_strlen(val1) > my_strlen(val2))
+  else if (my_strlen(val1) > my_strlen(val2))
     val2 = equalise_numbers(val1, val2);
   length = my_strlen(val1);
   result = malloc(8 * (length + 1));
@@ -84,7 +84,7 @@ char	*multiply_inf(char *val1, char *val2)
   int	val2len;
   int	val1len;
 
-  result = malloc(sizeof(char*) * (my_strlen(val1) + my_strlen(val2)));
+  result = malloc(8 * (my_strlen(val1) + my_strlen(val2)));
   str_set_zero(result, (my_strlen(val1) + my_strlen(val2)));
   indexVal1 = 0;
   val1len = my_strlen(val1);
@@ -94,15 +94,10 @@ char	*multiply_inf(char *val1, char *val2)
       while (indexVal2 > 0)
 	{
 	  indexVal2--;
-	  printf("apply %d\n", my_power_rec(10, (val2len - (indexVal2) - 1)));
-	  value = (val1[indexVal1] - 48) * my_power_rec(10, (val1len - indexVal1 - 1)) * ((val2[indexVal2] - 48)
-		   * my_power_rec(10, (val2len - (indexVal2) - 1)));
-	  printf("%d x %d = %d\n", (val1[indexVal1] - 48) * my_power_rec(10, (val1len - indexVal1 - 1)), ((val2[indexVal2] - 48) * my_power_rec(10, (val2len - (indexVal2) - 1))), value);
-
-	  value *= (indexVal1 == 0 ? 1 : my_power_rec(10, indexVal1 + 1));
-	   printf("value: %d\n", value);
-	//  printf("value: %d, to add: '%s'", )
-	  printf("to add: '%s'\n", int_to_string(value));
+	  value = (val1[indexVal1] - 48)
+	      * my_power_rec(10, (val1len - indexVal1 - 1))
+	      * ((val2[indexVal2] - 48)
+	      * my_power_rec(10, (val2len - indexVal2 - 1)));
 	  result = add_inf(result, int_to_string(value));
 	}
       indexVal1++;
