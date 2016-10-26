@@ -5,32 +5,49 @@
 ** Login   <moana.dumora@epitech.eu@epitech.eu>
 **
 ** Started on  Mon Oct 24 13:42:29 2016 Moana Dumora
-** Last update Mon Oct 24 16:38:36 2016 Moana Dumora
+** Last update Wed Oct 26 06:52:38 2016 Guillaume MARDON
 */
 
 char	*int_to_string(int nb)
 {
-  int	i;
+  int	strsize;
+  char 	*str;
   int	nb2;
-  char	*str;
+  int	index;
+  int 	written;
 
-  i = 0;
   nb2 = nb;
-  while (nb2 != 0)
+  strsize = 0;
+  while (nb2 != 0) //(nb2 /= 10) % 10 == 0)
     {
-      nb2 = nb2 / 10;
-      i++;
+      nb2 /= 10;
+      strsize++;
     }
-  (nb < 0) ? i++ : 0;
-  str = malloc(8 * (i + 1));
-  (nb == 0) ? str[0] = '0' : 0;
-  (nb < 0) ? str[0] = '-' : 0;
-  (nb < 0) ? nb = nb * -1 : 0;
-  while (i > 1)
+  str = malloc(8 * (strsize) + 1);
+  index = 0;
+  if (nb < 0)
     {
-      str[i - 1] = nb % 10 + 48;
-      nb = nb / 10;
-      i--;
+      nb *= (-1);
+      str[index++] = '-';
     }
+  written = 0;
+  while (nb >= 10)
+    {
+      str[index] = ((nb / my_power_rec(10, strsize - (index + 1)) + 48));
+      index++;
+      nb -= (nb / my_power_rec(10, strsize - (index))
+	     * my_power_rec(10, strsize - (index)));
+      written++;
+    }
+
+  if (nb >= 0 && nb <= 9)
+    {
+      written++;
+      str[index++] = (48 + nb % 10);
+    }
+  while (written++ < strsize)
+      str[index++] = '0';
+
+  str[index] = '\0';
   return (str);
 }
