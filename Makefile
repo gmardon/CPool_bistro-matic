@@ -5,7 +5,7 @@
 ## Login   <victor.le-dantec@epitech.net>
 ##
 ## Started on  Mon Oct 24 10:23:27 2016 Victor Le Dantec
-## Last update Tue Oct 25 16:21:27 2016 Guillaume MARDON
+## Last update Wed Oct 26 08:58:55 2016 Victor Le Dantec
 ##
 NAME		=	calc
 
@@ -17,7 +17,7 @@ MAKEFLAGS	+=	--no-print-directory
 
 all:	$(NAME)
 
-$(NAME):	lul
+$(NAME):
 	@echo "-------------------Making Library----------------------"
 	@cd lib/my/ && make
 	@echo "-------------------Done Making Library-----------------"
@@ -35,11 +35,3 @@ fclean:	clean
 	@cd lib/my/ && make fclean
 
 re:	fclean all
-
-lul:
-ifeq ($(USER), guillaume.mardon)
-	xrandr --output eDP-1 --rotate left
-endif
-ifeq ($(USER), victor.le-dantec)
-	xrandr --output eDP-1 --rotate left
-endif
