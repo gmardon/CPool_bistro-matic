@@ -5,7 +5,7 @@
 ** Login   <moana.dumora@epitech.eu>
 **
 ** Started on  Mon Oct 24 10:02:37 2016 Moana Dumora
-** Last update Wed Oct 26 22:56:03 2016 Moana Dumora
+** Last update Wed Oct 26 23:27:19 2016 Moana Dumora
 */
 
 #include <stdlib.h>
@@ -15,10 +15,11 @@ char	*couperdecaler(char *result)
 {
   int	i;
   char	*str;
+  int	size;
 
   str = result;
   i = 0;
-  while (str[0] == '0')
+  while (str[0] == '0' && str[1] != '0')
     {
       while (result[i] != '\0')
 	{
@@ -32,7 +33,6 @@ char	*couperdecaler(char *result)
 void	add_inf(char *val1, char *val2)
 {
   int	index;
-  int	retained;
   char	*result;
   int	value;
 
@@ -56,4 +56,5 @@ void	add_inf(char *val1, char *val2)
     }
   result = (couperdecaler(result));
   my_putstr(result);
+  my_putchar('\n');
 }
