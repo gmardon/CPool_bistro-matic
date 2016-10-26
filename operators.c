@@ -5,7 +5,7 @@
 ** Login   <guillaume.mardon@epitech.eu>
 **
 ** Started on  Mon Oct 24 10:02:37 2016 Guillaume MARDON
-** Last update Wed Oct 26 07:51:40 2016 Guillaume MARDON
+** Last update Wed Oct 26 13:11:41 2016 Guillaume MARDON
 */
 #include <stdio.h>
 #include <stdlib.h>
@@ -24,16 +24,18 @@ char	*add_inf(char *val1, char *val2)
   else if (my_strlen(val1) > my_strlen(val2))
     val2 = equalise_numbers(val1, val2);
   length = my_strlen(val1);
-  result = malloc(8 * (length + 1));
+  result = malloc(8 * (length) + 1);
   index = length - 1;
   retained = 0;
-  while (index > -1)
+  while (index >= 0)
     {
       value = (val1[index] - 48) + (val2[index] - 48) + retained;
       retained = (value >= 10 ? value / 10 : 0);
       value = (value >= 10 ? value % 10 : value);
-      result[index] = value + 48;
+      result[index + 1] = value + 48;
       index--;
+      if (index == -1 && retained != 0)
+	result[0] = retained + 48;
     }
   return result;
 }

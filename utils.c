@@ -5,7 +5,7 @@
 ** Login   <guillaume.mardon@epitech.eu>
 **
 ** Started on  Wed Oct 26 07:01:21 2016 Guillaume MARDON
-** Last update Wed Oct 26 07:01:46 2016 Guillaume MARDON
+** Last update Wed Oct 26 08:00:30 2016 Guillaume MARDON
 */
 char	*equalise_numbers(char *val1, char *val2)
 {
@@ -86,4 +86,9 @@ char	*int_to_string(int nb)
 
   str[index] = '\0';
   return (str);
+}
+
+int	nbr_is_neg(char *nbr)
+{
+  return (nbr[0] == '-' ? 1 : 0);
 }
