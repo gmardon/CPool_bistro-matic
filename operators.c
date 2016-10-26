@@ -5,48 +5,11 @@
 ** Login   <guillaume.mardon@epitech.eu>
 **
 ** Started on  Mon Oct 24 10:02:37 2016 Guillaume MARDON
-** Last update Wed Oct 26 07:00:11 2016 Guillaume MARDON
+** Last update Wed Oct 26 07:01:59 2016 Guillaume MARDON
 */
 #include <stdio.h>
 #include <stdlib.h>
-#include "int_to_string.c"
-
-char	*equalise_numbers(char *val1, char *val2)
-{
-  int	val1len;
-  int	val2len;
-  int	biggerlen;
-  char	*newarray;
-  int	index;
-
-  val1len = my_strlen(val1);
-  val2len = my_strlen(val2);
-  index = 0;
-  if (val1len > val2len)
-    {
-      newarray = malloc(val1len * sizeof(char*));
-      while (index++ < val1len)
-	  newarray[index - 1] = ((index - 1) < (val1len - val2len)
-		             ? '0' : val2[(index - 1) - (val1len - val2len)]);
-    }
-  else
-    {
-      newarray = malloc(val2len * sizeof(char*));
-      while (index++ < val2len)
-	  newarray[index] = ((index - 1) < (val2len - val1len)
-			     ? '0' : val1[(index - 1) - (val2len - val1len)]);
-    }
-  return newarray;
-}
-
-char	*str_set_zero(char *str, int size)
-{
-  int	index;
-
-  index = 0;
-  while (index < size)
-      str[index++] = '0';
-}
+#include "utils.c"
 
 char	*add_inf(char *val1, char *val2)
 {
