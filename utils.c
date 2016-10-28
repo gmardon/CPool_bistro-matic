@@ -5,7 +5,7 @@
 ** Login   <guillaume.mardon@epitech.eu>
 **
 ** Started on  Wed Oct 26 07:01:21 2016 Guillaume MARDON
-** Last update Fri Oct 28 14:18:43 2016 John Doe
+** Last update Fri Oct 28 14:20:23 2016 John Doe
 */
 char	*equalise_numbers(char *val1, char *val2)
 {
@@ -102,7 +102,7 @@ char	*substr(char *src, int bindex)
   index = 0;
   length = my_strlen(src);
   result = malloc(8 * (length - bindex));
-  while(index < length)
+  while (index < length)
     {
       result[index] = src[index + bindex];
       index++;
