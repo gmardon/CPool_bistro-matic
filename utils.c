@@ -5,7 +5,7 @@
 ** Login   <guillaume.mardon@epitech.eu>
 **
 ** Started on  Wed Oct 26 07:01:21 2016 Guillaume MARDON
-** Last update Wed Oct 26 08:00:30 2016 Guillaume MARDON
+** Last update Fri Oct 28 14:18:43 2016 John Doe
 */
 char	*equalise_numbers(char *val1, char *val2)
 {
@@ -91,4 +91,21 @@ char	*int_to_string(int nb)
 int	nbr_is_neg(char *nbr)
 {
   return (nbr[0] == '-' ? 1 : 0);
+}
+
+char	*substr(char *src, int bindex)
+{
+  char 	*result;
+  int		length;
+  int 	index;
+
+  index = 0;
+  length = my_strlen(src);
+  result = malloc(8 * (length - bindex));
+  while(index < length)
+    {
+      result[index] = src[index + bindex];
+      index++;
+    }
+  return result;
 }
