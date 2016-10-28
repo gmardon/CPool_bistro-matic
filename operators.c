@@ -5,11 +5,12 @@
 ** Login   <moana.dumora@epitech.eu>
 **
 ** Started on  Mon Oct 24 10:02:37 2016 Moana Dumora
-** Last update Thu Oct 27 16:44:29 2016 John Doe
+** Last update Fri Oct 28 12:05:03 2016 John Doe
 */
 
 #include <stdlib.h>
 #include "set_index.c"
+#include "utils.c"
 
 char	*couperdecaler(char *result)
 {
@@ -30,7 +31,7 @@ char	*couperdecaler(char *result)
   return (str);
 }
 
-void	add_inf(char *val1, char *val2)
+char 	*add_inf(char *val1, char *val2)
 {
   int	index;
   char	*result;
@@ -54,9 +55,7 @@ void	add_inf(char *val1, char *val2)
       result[index] = value + 48;
       index--;
     }
-  result = (couperdecaler(result));
-  my_putstr(result);
-  my_putchar('\n');
+  return (couperdecaler(result));
 }
 
 char	*minus_inf(char *val1, char *val2)
@@ -97,6 +96,7 @@ char	*multiply_inf(char *val1, char *val2)
   int	val1len;
 
   result = malloc(8 * (my_strlen(val1) + my_strlen(val2)));
+  printf("size: %d", (my_strlen(val1) + my_strlen(val2)));
   str_set_zero(result, (my_strlen(val1) + my_strlen(val2)));
   indexVal1 = 0;
   val1len = my_strlen(val1);
@@ -104,14 +104,14 @@ char	*multiply_inf(char *val1, char *val2)
     {
       indexVal2 = val2len = my_strlen(val2);
       while (indexVal2 > 0)
-	{
+				{
 	  indexVal2--;
 	  value = (val1[indexVal1] - 48)
 	      * my_power_rec(10, (val1len - indexVal1 - 1))
 	      * ((val2[indexVal2] - 48)
 	      * my_power_rec(10, (val2len - indexVal2 - 1)));
 	  result = add_inf(result, int_to_string(value));
-	}
+				}
       indexVal1++;
     }
   return (result);
