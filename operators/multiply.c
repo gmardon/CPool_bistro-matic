@@ -5,7 +5,7 @@
 ** Login   <guillaume.mardon@epitech.eu@epitech.eu>
 **
 ** Started on  Sun Oct 30 14:32:57 2016 Guillaume MARDON
-** Last update Sun Oct 30 14:33:01 2016 Guillaume MARDON
+** Last update Sun Oct 30 21:51:36 2016 Guillaume MARDON
 */
 char	*multiply(char *val1, char *val2)
 {
@@ -29,13 +29,20 @@ char	*multiply(char *val1, char *val2)
 	{
 	  indexVal2--;
 	  value = (val1[indexVal1] - 48)
-	      * my_power_rec(10, (val1len - indexVal1 - 1))
+	     * my_power_rec(10, (val1len - indexVal1 - 1))
 	  * ((val2[indexVal2] - 48)
 	     * my_power_rec(10, (val2len - indexVal2 - 1)));
+
+	  printf("zero count: %d",  (val1len - indexVal1 - 1) +  (val2len - indexVal2 - 1));
 	  printf("value: '%d' & result: '%s'\n", value, result);
-	  result = add_inf(result, int_to_string(value));
+	  result = add(result, int_to_string(value));
 				}
       indexVal1++;
     }
-  return (result);
+  return (remove_zeros(result));
+}
+
+void	*test(char *str)
+{
+  
 }

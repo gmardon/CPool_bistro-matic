@@ -5,8 +5,10 @@
 ** Login   <guillaume.mardon@epitech.eu@epitech.eu>
 **
 ** Started on  Sun Oct 30 14:27:30 2016 Guillaume MARDON
-** Last update Sun Oct 30 14:32:50 2016 Guillaume MARDON
+** Last update Sun Oct 30 18:26:04 2016 Guillaume MARDON
 */
+#include "../utils/utils.h"
+
 char	*add(char *val1, char *val2)
 {
   char	*result;
