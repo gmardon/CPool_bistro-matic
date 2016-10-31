@@ -5,7 +5,7 @@
 ** Login   <guillaume.mardon@epitech.eu>
 **
 ** Started on  Wed Oct 26 07:01:21 2016 Guillaume MARDON
-** Last update Fri Oct 28 14:20:23 2016 John Doe
+** Last update Sun Oct 30 19:02:32 2016 Guillaume MARDON
 */
 char	*equalise_numbers(char *val1, char *val2)
 {
@@ -108,4 +108,12 @@ char	*substr(char *src, int bindex)
       index++;
     }
   return result;
+}
+
+char	*remove_zeros(char *str)
+{
+  while (*str == '0')
+    str++;
+
+  return str;
 }

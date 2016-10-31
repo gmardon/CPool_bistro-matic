@@ -5,15 +5,13 @@
 ## Login   <victor.le-dantec@epitech.net>
 ##
 ## Started on  Mon Oct 24 10:23:27 2016 Victor Le Dantec
-## Last update Wed Oct 26 08:58:55 2016 Victor Le Dantec
+## Last update Sun Oct 30 18:33:43 2016 Guillaume MARDON
 ##
 NAME		=	calc
 
-SRC		=	main.c
+SRC		=	main.c ./operators/add.c ./operators/multiply.c ./operators/minus.c ./utils/utils.c
 
 RM		=	rm -f
-
-MAKEFLAGS	+=	--no-print-directory
 
 all:	$(NAME)
 
@@ -22,7 +20,7 @@ $(NAME):
 	@cd lib/my/ && make
 	@echo "-------------------Done Making Library-----------------"
 	@echo "Making Bistro-Matic .."
-	@gcc -w main.c -o $(NAME) -L./lib -lmy
+	@gcc -g -w $(SRC) -o $(NAME) -L./lib -lmy $(DEPS)
 	@echo "-------------------Done Making-------------------------"
 
 clean:
