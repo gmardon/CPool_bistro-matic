@@ -7,17 +7,20 @@
 ** Started on  Thu Oct  6 13:48:22 2016 Victor Le Dantec
 ** Last update Thu Oct  6 15:53:07 2016 Victor Le Dantec
 */
+
+#include <stdlib.h>
+
 int	my_strlen(char *str)
 {
-  int	i;
-  int	nbr;
+  size_t	i;
+  int		nbr;
 
   i = 0;
   nbr = 0;
-  while(str[i] != '\0')
+  while (str[i] != '\0')
     {
       nbr++;
       i++;
     }
-  return(nbr);
+  return (nbr);
 }

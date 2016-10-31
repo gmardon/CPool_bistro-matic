@@ -40,7 +40,8 @@ SRC	=	my_putchar.c		\
 		my_strupcase.c		\
 		my_swap.c		\
 		my_putstrerr.c		\
-		my_strdup.c
+		my_strdup.c		\
+		my_show_wordtab.c
 
 OBJ	=	$(SRC:.c=.o)
 
