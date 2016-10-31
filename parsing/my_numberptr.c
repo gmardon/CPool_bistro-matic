@@ -11,6 +11,8 @@
 #include <stdlib.h>
 #include <stdio.h>
 
+int	int_len(char *);
+
 char	*my_nbrptr(char *str, char **endptr)
 {
   int	i;
@@ -31,6 +33,35 @@ char	*my_nbrptr(char *str, char **endptr)
 	      str++;
 	      *endptr = str;
 	      return (nbr);
+	    }
+	}
+      str++;
+    }
+}
+
+char    *my_opptr(char *str, char **endptr)
+{
+  int   i;
+  char  *op;
+  int   k;
+  int   j;
+
+  i = k = j = 0;
+  op = malloc(sizeof(char *) * strlen(str));
+  while (*str != '\0')
+    {
+      printf("0");
+      if (*str == '-' && *str == '+' && *str == '*' && *str == '/'
+	  && *str == '%'  && *str == '(' && *str == ')' )
+	{
+	  op[k] = *str;
+	  k++;
+	  if (str[1] <= '9' || str[1] >= '0')
+	    {
+	      str++;
+	      *endptr = str;
+	      //printf("%s\n", op);
+	      return (op);
 	    }
 	}
       str++;
