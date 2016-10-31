@@ -5,7 +5,7 @@
 ** Login   <guillaume.mardon@epitech.eu>
 **
 ** Started on  Wed Oct 26 07:01:21 2016 Guillaume MARDON
-** Last update Sun Oct 30 19:02:32 2016 Guillaume MARDON
+** Last update Mon Oct 31 10:23:14 2016 Guillaume MARDON
 */
 char	*equalise_numbers(char *val1, char *val2)
 {
@@ -116,4 +116,23 @@ char	*remove_zeros(char *str)
     str++;
 
   return str;
+}
+
+void	*put_with_offset(char *str, int number, int zcount)
+{
+  int length;
+  int index;
+
+  length = my_strlen(str);
+  index = 0;
+  while (zcount != index)
+    {
+      str[length - (index++)] = '0';
+    }
+  if (number >= 10)
+    {
+      str[length - (index++)] = (number % 10) + 48;
+      number /= 10;
+    }
+  str[length - index] = number + 48;
 }

@@ -5,21 +5,19 @@
 ** Login   <guillaume.mardon@epitech.eu@epitech.eu>
 **
 ** Started on  Sun Oct 30 14:32:57 2016 Guillaume MARDON
-** Last update Sun Oct 30 21:51:36 2016 Guillaume MARDON
+** Last update Mon Oct 31 10:20:25 2016 Guillaume MARDON
 */
 char	*multiply(char *val1, char *val2)
 {
-  int	indexVal1;
+  int		indexVal1;
   int 	indexVal2;
   char	*result;
-  int	value;
-  int	val2len;
-  int	val1len;
+  char	*toAdd;
+  int		val2len;
+  int		val1len;
 
   result = malloc(8 * (my_strlen(val1) + my_strlen(val2)));
-  //printf("size: %d\n", (my_strlen(val1) + my_strlen(val2)));
   str_set_zero(result, (my_strlen(val1) + my_strlen(val2)));
-  //printf("def: %s\n", result);
   indexVal1 = 0;
   val1len = my_strlen(val1);
   while (indexVal1 < my_strlen(val1))
@@ -28,21 +26,13 @@ char	*multiply(char *val1, char *val2)
       while (indexVal2 > 0)
 	{
 	  indexVal2--;
-	  value = (val1[indexVal1] - 48)
-	     * my_power_rec(10, (val1len - indexVal1 - 1))
-	  * ((val2[indexVal2] - 48)
-	     * my_power_rec(10, (val2len - indexVal2 - 1)));
-
-	  printf("zero count: %d",  (val1len - indexVal1 - 1) +  (val2len - indexVal2 - 1));
-	  printf("value: '%d' & result: '%s'\n", value, result);
-	  result = add(result, int_to_string(value));
+	  toAdd = malloc(8 * (my_strlen(val1) + my_strlen(val2)));
+	  str_set_zero(toAdd, (my_strlen(val1) + my_strlen(val2)));
+	  result = add(result, put_with_offset(toAdd,
+					       (val1[indexVal1] - 48) * (val2[indexVal2] - 48),
+					       (val1len - indexVal1 - 1) + (val2len - indexVal2 - 1)));
 				}
       indexVal1++;
     }
   return (remove_zeros(result));
-}
-
-void	*test(char *str)
-{
-  
 }
