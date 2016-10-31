@@ -5,11 +5,12 @@
 ** Login   <guillaume.mardon@epitech.eu@epitech.eu>
 **
 ** Started on  Sun Oct 30 15:01:49 2016 Guillaume MARDON
-** Last update Mon Oct 31 13:37:30 2016 Guillaume MARDON
+** Last update Mon Oct 31 18:27:59 2016 Guillaume MARDON
 */
 char	*str_set_zero(char *str, int size);
 char	*equalise_numbers(char *val1, char *val2);
-int		nbr_is_neg(char *nbr);
+int		is_neg(char *nbr);
 char	*substr(char *src, int bindex);
 char	*remove_zeros(char *str);
 void	*put_with_offset(char *str, int number, int zcount);
+int		is_gretter(char *val1, char *val2);
