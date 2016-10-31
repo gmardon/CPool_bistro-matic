@@ -17,14 +17,21 @@ char	*torpn(char *str)
   
 }
 
-void	pushstack(str, stack, index)
+void	pushstack(char **str, char **stack, int index)
 {
-  stack[i] = malloc(sizeof(char **) * (int_len(str) + 2));
-  stack[i] = my_nbrptr(*str, str);
-  i++;
+  stack[index] = malloc(sizeof(char **) * (int_len(str) + 2));
+  stack[index] = my_nbrptr(*str, str);
 }
 
-void	popstack()
+void	pushstackop(char **str, char *stackop, int index)
 {
-  
+  stackop[index] = my_opptr(*str, str);
 }
+
+void	popstackop(char **str, char *stackop, char **stack, int index)
+{
+  int	sizeop;
+
+  stack[index] = malloc(sizeof(char *) + 1)
+  size = my_strlen(stackop);
+  stack[index] = stackop[size];
