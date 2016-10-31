@@ -4,6 +4,8 @@ char	*my_opptr(char *, char **);
 
 void	main(int ac, char **av)
 {
-  av++;
-  my_show_wordtab(torpn(av));
+  char **tmp;
+  
+  tmp = torpn(av);
+  my_show_wordtab(tmp);
 }

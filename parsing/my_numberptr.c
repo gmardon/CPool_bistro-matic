@@ -2,7 +2,7 @@
 ** my_numberptr.c for bitro in /home/moana/Piscine/CPool_bistro-matic/parsing/
 **
 ** Made by Moana Dumora
-** Login   <moana.dumora@epitech.eu@epitech.eu>
+** Login   <moana.dumora@epitech.eu>
 **
 ** Started on  Sun Oct 30 15:01:11 2016 Moana Dumora
 ** Last update Sun Oct 30 15:01:19 2016 Moana Dumora
@@ -31,7 +31,7 @@ char	*my_nbrptr(char *str, char **endptr)
 	  if (str[1] > '9' || str[1] < '0')
 	    {
 	      str++;
-	      *endptr = str;
+	      endptr[1] = str;
 	      return (nbr);
 	    }
 	}
@@ -54,12 +54,11 @@ char    *my_opptr(char *str, char **endptr)
 	  || *str == '%'  || *str == '(' || *str == ')' )
 	{
 	  op[k] = *str;
-	  printf("%s\n", op);
 	  k++;
 	  if (str[1] <= '9' || str[1] >= '0')
 	    {
 	      str++;
-	      *endptr = str;
+	      endptr[1] = str;
 	      return (op);
 	    }
 	}

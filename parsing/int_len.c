@@ -16,6 +16,7 @@ int     int_len(char *str)
   int   i;
   int   k;
 
+  k = 0;
   i = 0;
   while(str[i] != '\0')
     {
