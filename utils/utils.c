@@ -5,7 +5,7 @@
 ** Login   <guillaume.mardon@epitech.eu>
 **
 ** Started on  Wed Oct 26 07:01:21 2016 Guillaume MARDON
-** Last update Mon Oct 31 10:23:14 2016 Guillaume MARDON
+** Last update Mon Oct 31 13:37:20 2016 Guillaume MARDON
 */
 char	*equalise_numbers(char *val1, char *val2)
 {
@@ -29,7 +29,7 @@ char	*equalise_numbers(char *val1, char *val2)
     {
       newarray = malloc(val2len * sizeof(char*));
       while (index++ < val2len)
-	  newarray[index] = ((index - 1) < (val2len - val1len)
+	  newarray[index - 1] = ((index - 1) < (val2len - val1len)
 			     ? '0' : val1[(index - 1) - (val2len - val1len)]);
     }
   return newarray;
@@ -42,50 +42,6 @@ char	*str_set_zero(char *str, int size)
   index = 0;
   while (index < size)
       str[index++] = '0';
-}
-
-char	*int_to_string(int nb)
-{
-  int	strsize;
-  char 	*str;
-  int	nb2;
-  int	index;
-  int 	written;
-
-  nb2 = nb;
-  strsize = 0;
-  while (nb2 != 0) //(nb2 /= 10) % 10 == 0)
-    {
-      nb2 /= 10;
-      strsize++;
-    }
-  str = malloc(8 * (strsize) + 1);
-  index = 0;
-  if (nb < 0)
-    {
-      nb *= (-1);
-      str[index++] = '-';
-    }
-  written = 0;
-  while (nb >= 10)
-    {
-      str[index] = ((nb / my_power_rec(10, strsize - (index + 1)) + 48));
-      index++;
-      nb -= (nb / my_power_rec(10, strsize - (index))
-	     * my_power_rec(10, strsize - (index)));
-      written++;
-    }
-
-  if (nb >= 0 && nb <= 9)
-    {
-      written++;
-      str[index++] = (48 + nb % 10);
-    }
-  while (written++ < strsize)
-      str[index++] = '0';
-
-  str[index] = '\0';
-  return (str);
 }
 
 int	nbr_is_neg(char *nbr)
@@ -112,7 +68,7 @@ char	*substr(char *src, int bindex)
 
 char	*remove_zeros(char *str)
 {
-  while (*str == '0')
+  while (*str == '0' && *(str + 1) != '\0')
     str++;
 
   return str;

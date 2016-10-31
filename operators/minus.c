@@ -5,7 +5,7 @@
 ** Login   <guillaume.mardon@epitech.eu@epitech.eu>
 **
 ** Started on  Sun Oct 30 14:28:34 2016 Guillaume MARDON
-** Last update Sun Oct 30 14:32:41 2016 Guillaume MARDON
+** Last update Mon Oct 31 13:35:56 2016 Guillaume MARDON
 */
 char	*minus(char *val1, char *val2)
 {
@@ -27,10 +27,10 @@ char	*minus(char *val1, char *val2)
     {
       value = (val1[index] - 48) - ((val2[index] - 48) + retained);
       if (value < 0)
-	value = ((val1[index] - 48) + 10) - ((val2[index] - 48) + retained++);
+				value = ((val1[index] - 48) + 10) - ((val2[index] - 48) + retained++);
       value = (value >= 10 ? value % 10 : value);
       result[index] = value + 48;
       index--;
     }
-  return result;
+  return (remove_zeros(result));
 }
