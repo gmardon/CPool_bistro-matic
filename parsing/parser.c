@@ -41,6 +41,6 @@ void	popstackop(char **str, char *stackop, char **stack, int index)
   int	sizeop;
 
   stack[index] = malloc(sizeof(char *) + 1);
-  size = my_strlen(stackop);
-  stack[index] = stackop[size];
+  sizeop = my_strlen(stackop);
+  stack[index] = stackop[sizeop];
 }
