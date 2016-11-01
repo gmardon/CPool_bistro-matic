@@ -92,7 +92,7 @@ char    *my_baseptr(char *str, char **endptr, char *base)
   int   j;
 
   i = k = j = 0;
-  nbr = malloc(2000);
+  nbr = malloc(sizeof(char *) * my_strlen(str));
   while (*str != '\0')
     {
       if (*str != '*' && *str != '+' && *str != '-' && *str != '/' &&
@@ -100,15 +100,14 @@ char    *my_baseptr(char *str, char **endptr, char *base)
 	{
 	  nbr[k] = *str;
 	  k++;
-	  if (str[1] == '*' && *str == '+' && *str == '-' && *str == '/' &&
-	      *str == '%' && *str == '(' && *str == ')')
+	  if (str[1] == '*' || str[1] == '+' || str[1] == '-' || str[1] == '/' ||
+	      str[1] == '%' || str[1] == '(' || str[1] == ')' || str[1] == '\0')
 	    {
 	      str++;
-	      endptr[1] = str;
+	      endptr[2] = str;
 	      return (convert_to_ten(nbr, base));
 	    }
 	}
-
       str++;
     }
 }
@@ -132,7 +131,7 @@ char    *my_opptr(char *str, char **endptr)
 	  if (str[1] <= '9' || str[1] >= '0')
 	    {
 	      str++;
-	      endptr[1] = str;
+	      endptr[2] = str;
 	      return (op);
 	    }
 	}
@@ -140,20 +139,18 @@ char    *my_opptr(char *str, char **endptr)
     }
 }
 
-char	*whole_convert(char *base, char *str, char **tab)
+char	*whole_convert(char *base, char **str)
 {
   char	*final;
-
-  final = malloc(sizeof(char *) * (my_strlen(str) + 1));
-  while (*str != '\0')
+  
+  final = malloc(sizeof(char *) * (my_strlen(str[2]) + 1));
+  while (str[2][0] != '\0')
     {
-      if (*str == '-' || *str == '+' || *str == '*' || *str == '/'
-	  || *str == '%'  || *str == '(' || *str == ')')
-	printf("%s\n", my_opptr(str, tab));
-      //final = my_strcat(final, my_opptr(str, tab));
+      if (str[2][0] == '-' || str[2][0] == '+' || str[2][0] == '*' || str[2][0] == '/'
+	  || str[2][0] == '%' || str[2][0] == '(' || str[2][0] == ')')
+	final = my_strcat(final, my_opptr(str[2], str));
       else
-	printf("%s\n", my_baseptr(str, tab, base));
-      //final = my_strcat(final, my_baseptr(str, tab, base));
+	final = my_strcat(final, my_baseptr(str[2], str, base));
     }
   return (final);
 }
