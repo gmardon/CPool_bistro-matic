@@ -5,7 +5,7 @@
 ** Login   <guillaume.mardon@epitech.eu>
 **
 ** Started on  Wed Oct 26 07:01:21 2016 Guillaume MARDON
-** Last update Tue Nov  1 19:23:34 2016 Guillaume MARDON
+** Last update Tue Nov  1 20:45:28 2016 Guillaume MARDON
 */
 
 char	*remove_zeros(char *str)
@@ -111,7 +111,10 @@ int	is_gretter(char *val1, char *val2)
   int 	index;
 
   index = 0;
-
+  if (my_strlen(val1) < my_strlen(val2))
+    val1 = equalise_numbers(val1, val2);
+  else if (my_strlen(val1) > my_strlen(val2))
+    val2 = equalise_numbers(val1, val2);
   while (val1[index] == val2[index])
     {
       if (val1[index] == '\0' && val2[index] == '\0')
@@ -121,8 +124,8 @@ int	is_gretter(char *val1, char *val2)
       index++;
     }
   if (val1[index] == '-')
-    return 0;
+    return -1;
   else if (val2[index] == '-')
    	return 1;
-  return (val1[index] < val2[index] ? 1 : 0);
+  return (val1[index] < val2[index] ? -1 : 1);
 }

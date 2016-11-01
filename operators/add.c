@@ -5,9 +5,26 @@
 ** Login   <guillaume.mardon@epitech.eu@epitech.eu>
 **
 ** Started on  Sun Oct 30 14:27:30 2016 Guillaume MARDON
-** Last update Tue Nov  1 19:39:54 2016 Guillaume MARDON
+** Last update Tue Nov  1 20:59:53 2016 Guillaume MARDON
 */
 #include "../utils/utils.h"
+
+char	*handle_negative(char *val1, char *val2)
+{
+  if (is_neg(val1) && !is_neg(val2))
+    {
+      if (is_gretter(val1 + 1, val2) == 1)
+	  			return (set_negative(minus(val1 + 1, val2)));
+      else if (is_gretter(val1 + 1, val2) == -1)
+					return (minus(val2, val1 + 1));
+      else
+					return ("0");
+    }
+  else if (!is_neg(val1) && is_neg(val2))
+      return (handle_negative(val2, val1));
+  else if (is_neg(val1) && is_neg(val2))
+    return (set_negative(add(val1 + 1, val2 + 1)));
+}
 
 char	*add(char *val1, char *val2)
 {
@@ -17,22 +34,8 @@ char	*add(char *val1, char *val2)
   int	value;
   int	retained;
 
-  if (is_neg(val1) && !is_neg(val2))
-    {
-      if (is_gretter(val1 + 1, val2))
-	  			return (set_negative(minus(val1 + 1, val2)));
-      else
-					return (minus(val2, val1 + 1));
-    }
-  else if (!is_neg(val1) && is_neg(val2))
-    {
-      return (add(val2, val1));
-    }
-  else if (is_neg(val1) && is_neg(val2))
-    {
-      return (set_negative(add(val1 + 1, val2 + 1));
-    }
-
+  if (is_neg(val1) || is_neg(val2))
+    return (handle_negative(val1, val2));
   if (my_strlen(val1) < my_strlen(val2))
     val1 = equalise_numbers(val1, val2);
   else if (my_strlen(val1) > my_strlen(val2))
