@@ -5,9 +5,10 @@
 ** Login   <guillaume.mardon@epitech.eu@epitech.eu>
 **
 ** Started on  Sun Oct 30 14:27:30 2016 Guillaume MARDON
-** Last update Tue Nov  1 20:59:53 2016 Guillaume MARDON
+** Last update Tue Nov  1 21:13:50 2016 Guillaume MARDON
 */
 #include "../utils/utils.h"
+#include "add.h"
 
 char	*handle_negative(char *val1, char *val2)
 {

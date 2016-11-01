@@ -5,11 +5,12 @@
 ** Login   <guillaume.mardon@epitech.eu@epitech.eu>
 **
 ** Started on  Sun Oct 30 14:28:34 2016 Guillaume MARDON
-** Last update Tue Nov  1 20:56:06 2016 Guillaume MARDON
+** Last update Tue Nov  1 21:20:35 2016 Guillaume MARDON
 */
+#include "minus.h"
+
 char	*minus(char *val1, char *val2)
 {
-  printf("minus(%s, %s)\n", val1, val2);
   char	*result;
   int	index;
   int	length;

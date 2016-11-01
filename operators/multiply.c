@@ -5,8 +5,10 @@
 ** Login   <guillaume.mardon@epitech.eu@epitech.eu>
 **
 ** Started on  Sun Oct 30 14:32:57 2016 Guillaume MARDON
-** Last update Mon Oct 31 10:20:25 2016 Guillaume MARDON
+** Last update Tue Nov  1 21:20:46 2016 Guillaume MARDON
 */
+#include "multiply.h"
+
 char	*multiply(char *val1, char *val2)
 {
   int		indexVal1;
