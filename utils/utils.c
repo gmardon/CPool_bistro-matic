@@ -5,7 +5,7 @@
 ** Login   <guillaume.mardon@epitech.eu>
 **
 ** Started on  Wed Oct 26 07:01:21 2016 Guillaume MARDON
-** Last update Tue Nov  1 11:23:42 2016 Guillaume MARDON
+** Last update Tue Nov  1 11:58:12 2016 Guillaume MARDON
 */
 
 char	*remove_zeros(char *str)
@@ -14,6 +14,18 @@ char	*remove_zeros(char *str)
     str++;
 
   return (str);
+}
+
+char	*set_negative(char *str)
+{
+  char	*nstr;
+	int		index;
+
+  str = remove_zeros(str);
+  nstr = malloc(sizeof(char *) * (my_strlen(str) + 1));
+  my_strcpy(nstr + 1, str);
+  nstr[0] = '-';
+  return nstr;
 }
 
 char	*equalise_numbers(char *val1, char *val2)
