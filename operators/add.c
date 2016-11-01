@@ -5,7 +5,7 @@
 ** Login   <guillaume.mardon@epitech.eu@epitech.eu>
 **
 ** Started on  Sun Oct 30 14:27:30 2016 Guillaume MARDON
-** Last update Mon Oct 31 13:34:19 2016 Guillaume MARDON
+** Last update Tue Nov  1 11:22:28 2016 Guillaume MARDON
 */
 #include "../utils/utils.h"
 
@@ -16,6 +16,14 @@ char	*add(char *val1, char *val2)
   int	length;
   int	value;
   int	retained;
+
+/*  if(is_neg(val1) && !is_neg(val2))
+  {
+      if(is_gretter(val1 + 1, val2))
+				{
+
+				}
+    }*/
 
   if (my_strlen(val1) < my_strlen(val2))
     val1 = equalise_numbers(val1, val2);
