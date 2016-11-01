@@ -5,8 +5,29 @@
 ** Login   <guillaume.mardon@epitech.eu>
 **
 ** Started on  Wed Oct 26 07:01:21 2016 Guillaume MARDON
-** Last update Mon Oct 31 18:28:31 2016 Guillaume MARDON
+** Last update Tue Nov  1 11:58:12 2016 Guillaume MARDON
 */
+
+char	*remove_zeros(char *str)
+{
+  while (*str == '0' && *(str + 1) != '\0')
+    str++;
+
+  return (str);
+}
+
+char	*set_negative(char *str)
+{
+  char	*nstr;
+	int		index;
+
+  str = remove_zeros(str);
+  nstr = malloc(sizeof(char *) * (my_strlen(str) + 1));
+  my_strcpy(nstr + 1, str);
+  nstr[0] = '-';
+  return nstr;
+}
+
 char	*equalise_numbers(char *val1, char *val2)
 {
   int	val1len;
@@ -66,14 +87,6 @@ char	*substr(char *src, int bindex)
   return (result);
 }
 
-char	*remove_zeros(char *str)
-{
-  while (*str == '0' && *(str + 1) != '\0')
-    str++;
-
-  return (str);
-}
-
 void	*put_with_offset(char *str, int number, int zcount)
 {
   int length;
@@ -99,17 +112,17 @@ int	is_gretter(char *val1, char *val2)
 
   index = 0;
 
-  while (s1[index] == s2[index])
+  while (val1[index] == val2[index])
     {
-      if (s1[index] == '\0' && s2[index] == '\0')
+      if (val1[index] == '\0' && val2[index] == '\0')
 				{
 	  			return (0);
 				}
       index++;
     }
-  if(s1[index] == '-')
+  if (val1[index] == '-')
     return -1;
-  else if (s2[index] == '-')
+  else if (val2[index] == '-')
    	return 1;
-  return (s1[index] < s2[index] ? 1 : -1);
+  return (val1[index] < val2[index] ? 1 : -1);
 }

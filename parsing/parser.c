@@ -30,15 +30,28 @@ char	**torpn(char **str)
 	}
       else if (is_operator(str[1]) == 1)
 	{
-	  while (chk_priority(str[1][0]) < chk_priority(stackop[my_strlen(stackop)]))
+	  while (chk_priority(str[1][0]) < chk_priority(stackop[my_strlen(stackop) - 1]))
 	    {
-	      //printf("test2\n");
+	      if (str[1][0] == '(')
+		break;
 	      popstackop(str, stackop, stack, index);
 	      index++;
 	    }
-	  //printf("test3\n");
-	  pushstackop(str, stackop, indexop);
-	  indexop++;
+	  if (chk_priority(str[1][0]) == 5)
+	    {
+	      while (stackop[my_strlen(stackop) - 1] != '(')
+		{
+		  popstackop(str, stackop, stack, index);
+		  index++;
+		}
+	      stackop[my_strlen(stackop) - 1] = '\0';
+	      mv_pointer_next_char(str[1], str);
+	    }
+	  else
+	    {
+	      pushstackop(str, stackop, indexop);
+	      indexop++;
+	    }
 	}
     }
   indexop = 0;
@@ -70,4 +83,10 @@ void	popstackop(char **str, char *stackop, char **stack, int index)
   stack[index][1] = '\0';
   stackop[my_strlen(stackop) - 1] = '\0';
   //printf("stackopfin = %s\n", stackop);
+}
+
+void	mv_pointer_next_char(char *str, char **endptr)
+{
+  str++;
+  endptr[1] = str;
 }

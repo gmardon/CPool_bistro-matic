@@ -5,7 +5,7 @@
 ** Login   <guillaume.mardon@epitech.eu>
 **
 ** Started on  Mon Oct 24 10:03:22 2016 Guillaume MARDON
-** Last update Mon Oct 31 13:36:13 2016 Guillaume MARDON
+** Last update Tue Nov  1 11:45:56 2016 Guillaume MARDON
 */
 #include "stdio.h"
 
@@ -14,7 +14,7 @@ int	main(int argc, char **argv)
   if (argc < 3 || argc > 3)
     return (84);
   else
-    printf("%s - %s = %s", argv[1], argv[2], minus(argv[1], argv[2]));
+    printf("%s + %s = %s", argv[1], argv[2], add(argv[1], argv[2]));
 /*
   char base_digits[16] =
 	 {'0', '1', '2', '3', '4', '5', '6', '7',
