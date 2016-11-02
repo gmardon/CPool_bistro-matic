@@ -5,7 +5,7 @@
 ** Login   <guillaume.mardon@epitech.eu@epitech.eu>
 **
 ** Started on  Sun Oct 30 14:28:34 2016 Guillaume MARDON
-** Last update Wed Nov  2 09:47:18 2016 Guillaume MARDON
+** Last update Wed Nov  2 09:49:47 2016 Guillaume MARDON
 */
 #include "minus.h"
 
@@ -24,13 +24,8 @@ char	*minus_handle_negative(char *val1, char *val2)
       else
 					return ("0");
     }
-    //return (set_negative(add(val1 + 1, val2 + 1)));
-    else if (!is_neg(val1) && !is_neg(val2) && is_greater(val2, val1) == 1)
-    {
-      printf("greater: %d (val1: %s, val2: %s)\n", is_greater(val2, val1), val1, val2);
+    else if (!is_neg(val1) && !is_neg(val2) && is_greater(val2, val1) == 1
       return (set_negative(minus(val2, val1)));
-    }
-
 }
 
 char	*minus(char *val1, char *val2)
@@ -54,8 +49,7 @@ char	*minus(char *val1, char *val2)
   while (index > -1)
     {
       value = (val1[index] - 48) - ((val2[index] - 48) + retained);
-      if (value < 0)
-				value = ((val1[index] - 48) + 10) - ((val2[index] - 48) + retained++);
+		  value = (value < 0 ? ((val1[index] - 48) + 10) - ((val2[index] - 48) + retained++) : value);
       value = (value >= 10 ? value % 10 : value);
       result[index] = value + 48;
       index--;
