@@ -5,6 +5,7 @@
 ** Login   <guillaume.mardon@epitech.eu@epitech.eu>
 **
 ** Started on  Sun Oct 30 14:30:45 2016 Guillaume MARDON
-** Last update Sun Oct 30 14:33:09 2016 Guillaume MARDON
+** Last update Wed Nov  2 11:07:01 2016 Guillaume MARDON
 */
+char	*multiply_after_handle_negative(char *val1, char *val2, char *result);
 char	*multiply(char *val1, char *val2);

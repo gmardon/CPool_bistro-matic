@@ -5,13 +5,24 @@
 ** Login   <guillaume.mardon@epitech.eu>
 **
 ** Started on  Wed Oct 26 07:01:21 2016 Guillaume MARDON
-** Last update Tue Nov  1 21:31:34 2016 Guillaume MARDON
+** Last update Wed Nov  2 11:04:08 2016 Guillaume MARDON
 */
 #include "utils.h"
 
 char	*remove_zeros(char *str)
 {
   while (*str == '0' && *(str + 1) != '\0')
+    str++;
+
+  return (str);
+}
+
+char	*clean_negation(char *str)
+{
+  if (!is_neg(str))
+    return str;
+
+  while (*str == '-' && is_neg(str + 1))
     str++;
 
   return (str);

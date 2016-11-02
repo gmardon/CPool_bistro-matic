@@ -5,7 +5,7 @@
 ** Login   <guillaume.mardon@epitech.eu@epitech.eu>
 **
 ** Started on  Sun Oct 30 14:28:34 2016 Guillaume MARDON
-** Last update Wed Nov  2 09:49:47 2016 Guillaume MARDON
+** Last update Wed Nov  2 11:07:57 2016 Guillaume MARDON
 */
 #include "minus.h"
 
@@ -24,7 +24,7 @@ char	*minus_handle_negative(char *val1, char *val2)
       else
 					return ("0");
     }
-    else if (!is_neg(val1) && !is_neg(val2) && is_greater(val2, val1) == 1
+    else if (!is_neg(val1) && !is_neg(val2) && is_greater(val2, val1) == 1)
       return (set_negative(minus(val2, val1)));
 }
 

@@ -5,9 +5,21 @@
 ** Login   <guillaume.mardon@epitech.eu@epitech.eu>
 **
 ** Started on  Sun Oct 30 14:32:57 2016 Guillaume MARDON
-** Last update Tue Nov  1 21:20:46 2016 Guillaume MARDON
+** Last update Wed Nov  2 11:06:07 2016 Guillaume MARDON
 */
 #include "multiply.h"
+
+char	*multiply_after_handle_negative(char *val1, char *val2, char *result)
+{
+  if ((is_neg(val1) || is_neg(val2)) && !(is_neg(val1) && is_neg(val2)))
+    {
+      return (set_negative(result));
+    }
+  else if (!is_neg(val1) && !is_neg(val2))
+    {
+      return (result);
+    }
+}
 
 char	*multiply(char *val1, char *val2)
 {
@@ -36,5 +48,5 @@ char	*multiply(char *val1, char *val2)
 				}
       indexVal1++;
     }
-  return (remove_zeros(result));
+  return (multiply_after_handle_negative(val1, val2, remove_zeros(result)));
 }
