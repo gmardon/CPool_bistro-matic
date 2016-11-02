@@ -5,9 +5,28 @@
 ** Login   <guillaume.mardon@epitech.eu@epitech.eu>
 **
 ** Started on  Sun Oct 30 14:28:34 2016 Guillaume MARDON
-** Last update Tue Nov  1 21:20:35 2016 Guillaume MARDON
+** Last update Wed Nov  2 09:49:47 2016 Guillaume MARDON
 */
 #include "minus.h"
+
+char	*minus_handle_negative(char *val1, char *val2)
+{
+  if (!is_neg(val1) && is_neg(val2))
+      return (add(val1, val2 + 1));
+  else if (is_neg(val1) && !is_neg(val2))
+      return (minus_handle_negative(val2, val1));
+  else if (is_neg(val1) && is_neg(val2))
+    {
+      if (is_greater(val1 + 1, val2 + 1) == 1)
+	  			return (set_negative(minus(val1 + 1, val2 + 1)));
+      else if (is_greater(val1 + 1, val2 + 1) == -1)
+					return (minus(val2 + 1, val1 + 1));
+      else
+					return ("0");
+    }
+    else if (!is_neg(val1) && !is_neg(val2) && is_greater(val2, val1) == 1
+      return (set_negative(minus(val2, val1)));
+}
 
 char	*minus(char *val1, char *val2)
 {
@@ -17,6 +36,8 @@ char	*minus(char *val1, char *val2)
   int	value;
   int	retained;
 
+  if (is_neg(val1) || is_neg(val2) || (is_greater(val2, val1) == 1))
+    return (minus_handle_negative(val1, val2));
   if (my_strlen(val1) < my_strlen(val2))
     val1 = equalise_numbers(val1, val2);
   else if (my_strlen(val1) > my_strlen(val2))
@@ -28,8 +49,7 @@ char	*minus(char *val1, char *val2)
   while (index > -1)
     {
       value = (val1[index] - 48) - ((val2[index] - 48) + retained);
-      if (value < 0)
-				value = ((val1[index] - 48) + 10) - ((val2[index] - 48) + retained++);
+		  value = (value < 0 ? ((val1[index] - 48) + 10) - ((val2[index] - 48) + retained++) : value);
       value = (value >= 10 ? value % 10 : value);
       result[index] = value + 48;
       index--;

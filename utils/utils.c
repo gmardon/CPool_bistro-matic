@@ -5,8 +5,9 @@
 ** Login   <guillaume.mardon@epitech.eu>
 **
 ** Started on  Wed Oct 26 07:01:21 2016 Guillaume MARDON
-** Last update Tue Nov  1 20:45:28 2016 Guillaume MARDON
+** Last update Tue Nov  1 21:31:34 2016 Guillaume MARDON
 */
+#include "utils.h"
 
 char	*remove_zeros(char *str)
 {
@@ -106,7 +107,7 @@ void	*put_with_offset(char *str, int number, int zcount)
   str[length - index] = number + 48;
 }
 
-int	is_gretter(char *val1, char *val2)
+int	is_greater(char *val1, char *val2)
 {
   int 	index;
 
