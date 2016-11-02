@@ -5,7 +5,7 @@
 ** Login   <guillaume.mardon@epitech.eu@epitech.eu>
 **
 ** Started on  Sun Oct 30 14:30:45 2016 Guillaume MARDON
-** Last update Tue Nov  1 21:02:07 2016 Guillaume MARDON
+** Last update Tue Nov  1 21:27:42 2016 Guillaume MARDON
 */
-char	*handle_negative(char *val1, char *val2);
+char	*add_handle_negative(char *val1, char *val2);
 char	*add(char *val1, char *val2);
