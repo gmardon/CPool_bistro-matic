@@ -5,7 +5,7 @@
 ** Login   <guillaume.mardon@epitech.eu@epitech.eu>
 **
 ** Started on  Sun Oct 30 14:28:34 2016 Guillaume MARDON
-** Last update Wed Nov  2 00:47:01 2016 Guillaume MARDON
+** Last update Wed Nov  2 09:47:18 2016 Guillaume MARDON
 */
 #include "minus.h"
 
@@ -25,15 +25,12 @@ char	*minus_handle_negative(char *val1, char *val2)
 					return ("0");
     }
     //return (set_negative(add(val1 + 1, val2 + 1)));
-  else if (!is_neg(val1) && !is_neg(val2))
-    if (is_greater(val2, val1))
-	{
-	  return (set_negative(minus(val2, val1)));
-	}
-  else if (is_greater(val1, val2) == -1)
+    else if (!is_neg(val1) && !is_neg(val2) && is_greater(val2, val1) == 1)
     {
+      printf("greater: %d (val1: %s, val2: %s)\n", is_greater(val2, val1), val1, val2);
       return (set_negative(minus(val2, val1)));
     }
+
 }
 
 char	*minus(char *val1, char *val2)
@@ -44,7 +41,7 @@ char	*minus(char *val1, char *val2)
   int	value;
   int	retained;
 
-  if (is_neg(val1) || is_neg(val2) || (is_greater(val2, val1)))
+  if (is_neg(val1) || is_neg(val2) || (is_greater(val2, val1) == 1))
     return (minus_handle_negative(val1, val2));
   if (my_strlen(val1) < my_strlen(val2))
     val1 = equalise_numbers(val1, val2);

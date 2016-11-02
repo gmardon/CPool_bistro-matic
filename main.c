@@ -5,7 +5,7 @@
 ** Login   <guillaume.mardon@epitech.eu>
 **
 ** Started on  Mon Oct 24 10:03:22 2016 Guillaume MARDON
-** Last update Tue Nov  1 20:56:21 2016 Guillaume MARDON
+** Last update Tue Nov  1 21:45:37 2016 Guillaume MARDON
 */
 #include "stdio.h"
 
@@ -16,7 +16,7 @@ int	main(int argc, char **argv)
   else
     //printf("is_gretter(%s, %s) = %d", argv[1], argv[2], is_gretter(argv[1], argv[2]));
 
-  printf("%s + %s = %s\n", argv[1], argv[2], add(argv[1], argv[2]));
+  printf("%s - %s = %s\n", argv[1], argv[2], minus(argv[1], argv[2]));
 /*
   char base_digits[16] =
 	 {'0', '1', '2', '3', '4', '5', '6', '7',
