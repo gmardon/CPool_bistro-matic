@@ -7,9 +7,12 @@
 ** Started on  Fri Oct  7 11:01:09 2016 Victor Le Dantec
 ** Last update Tue Oct 11 13:12:28 2016 Victor Le Dantec
 */
-int	my_power_rec(int nb, int p)
+
+#include <stdio.h>
+
+ssize_t	my_power_rec(ssize_t nb, ssize_t p)
 {
-  int result;
+  ssize_t	result;
 
   if (p == 0)
     return (1);
