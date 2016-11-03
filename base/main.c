@@ -6,8 +6,11 @@ void	size_to_str(ssize_t);
 
 char	*whole_convert(char *, char **);
 
+ssize_t	char_to_size(char *);
+
+char	*ten_to_base(char *, char*);
+
 int	main(int ac, char **av)
 {
-  //whole_convert(av[1], av[2], av);
-  printf("%s\n", whole_convert(av[1], av));
+  ten_to_base(av[1], av[2]);
 }

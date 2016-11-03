@@ -5,12 +5,18 @@
 ** Login   <guillaume.mardon@epitech.eu>
 **
 ** Started on  Wed Oct 26 07:01:21 2016 Guillaume MARDON
-** Last update Wed Nov  2 11:04:08 2016 Guillaume MARDON
+** Last update Thu Nov  3 17:37:42 2016 Guillaume MARDON
 */
 #include "utils.h"
 
 char	*remove_zeros(char *str)
 {
+  if (*str == '\0')
+    return str;
+
+  if (*(str + 1) == '\0')
+    return str;
+
   while (*str == '0' && *(str + 1) != '\0')
     str++;
 
@@ -19,13 +25,14 @@ char	*remove_zeros(char *str)
 
 char	*clean_negation(char *str)
 {
-  if (!is_neg(str))
-    return str;
+  char	*nstr;
 
-  while (*str == '-' && is_neg(str + 1))
+  while (*str == '-' && *(str + 1) != '\0' && is_neg(str + 1))
     str++;
 
-  return (str);
+  nstr = malloc(sizeof(char *) * (my_strlen(str)));
+  my_strcpy(nstr, str);
+  return (nstr);
 }
 
 char	*set_negative(char *str)
@@ -37,6 +44,7 @@ char	*set_negative(char *str)
   nstr = malloc(sizeof(char *) * (my_strlen(str) + 1));
   my_strcpy(nstr + 1, str);
   nstr[0] = '-';
+  //free(str);
   return nstr;
 }
 
@@ -79,6 +87,8 @@ char	*str_set_zero(char *str, int size)
 
 int	is_neg(char *nbr)
 {
+  if (*nbr == '\0')
+    return (0);
   return (remove_zeros(nbr)[0] == '-' ? 1 : 0);
 }
 

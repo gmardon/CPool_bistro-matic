@@ -5,20 +5,25 @@
 ** Login   <guillaume.mardon@epitech.eu@epitech.eu>
 **
 ** Started on  Sun Oct 30 14:32:57 2016 Guillaume MARDON
-** Last update Wed Nov  2 11:06:07 2016 Guillaume MARDON
+** Last update Thu Nov  3 17:38:02 2016 Guillaume MARDON
 */
 #include "multiply.h"
 
-char	*multiply_after_handle_negative(char *val1, char *val2, char *result)
+char	*multiply_handle_negative(char *val1, char *val2)
 {
+  val1 = clean_negation(val1);
+  val2 = clean_negation(val2);
   if ((is_neg(val1) || is_neg(val2)) && !(is_neg(val1) && is_neg(val2)))
     {
-      return (set_negative(result));
+      if (is_neg(val1) && !is_neg(val2))
+	  				return (set_negative(multiply(val1 + 1, val2)));
+      else if (!is_neg(val1) && is_neg(val2))
+	  				return (set_negative(multiply(val1, val2 + 1)));
     }
-  else if (!is_neg(val1) && !is_neg(val2))
-    {
-      return (result);
-    }
+	else if (is_neg(val1) && is_neg(val2))
+	 {
+	 		return (multiply(val1 + 1, val2 + 1));
+	 }
 }
 
 char	*multiply(char *val1, char *val2)
@@ -30,6 +35,8 @@ char	*multiply(char *val1, char *val2)
   int		val2len;
   int		val1len;
 
+  if (is_neg(val1) || is_neg(val2))
+    return (multiply_handle_negative(val1, val2));
   result = malloc(8 * (my_strlen(val1) + my_strlen(val2)));
   str_set_zero(result, (my_strlen(val1) + my_strlen(val2)));
   indexVal1 = 0;
@@ -48,5 +55,5 @@ char	*multiply(char *val1, char *val2)
 				}
       indexVal1++;
     }
-  return (multiply_after_handle_negative(val1, val2, remove_zeros(result)));
+  return (remove_zeros(result));
 }
