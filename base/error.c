@@ -81,3 +81,25 @@ int	doublechar_in_base(char *base)
 	}
     }
 }
+
+int	check_parent(char *expr)
+{
+  size_t	i;
+  size_t	k;
+
+  i = 0;
+  while (expr[i] != '\0')
+    {
+      if (expr[i] == '(')
+	k++;
+      if (expr[i] == ')')
+	k--;
+      i++;
+    }
+  if (k == 0)
+    return (0);
+  else if (k > 0)
+    return (83);
+  else
+    return (84);
+}
