@@ -11,7 +11,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int	my_strlen(char *);
+size_t	my_strlen(char *);
 
 int	my_power_rec(int, int);
 
@@ -30,10 +30,10 @@ char	*etvalbase(char *base)
   return (val_base);
 }
 
-char	*size_to_str(ssize_t total)
+char	*size_to_str(size_t total)
 {
-  ssize_t	tmp;
-  ssize_t	i;
+  size_t	tmp;
+  size_t	i;
   char		*str;
 
   i = 0;
@@ -57,10 +57,10 @@ char	*size_to_str(ssize_t total)
 
 char	*convert_to_ten(char *nbr, char *base)
 {
-  ssize_t	total;
-  ssize_t	index;
-  ssize_t	kindex;
-  ssize_t	pow;
+  size_t	total;
+  size_t	index;
+  size_t	kindex;
+  size_t	pow;
   char		*val_base;
   char		*final;
 
