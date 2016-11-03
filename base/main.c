@@ -12,5 +12,5 @@ char	*ten_to_base(char *, char*);
 
 int	main(int ac, char **av)
 {
-  ten_to_base(av[1], av[2]);
+  printf("%s\n", whole_convert(av[1], av));
 }

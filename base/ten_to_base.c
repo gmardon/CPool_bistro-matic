@@ -13,24 +13,26 @@
 
 size_t	my_strlen(char *);
 
-ssize_t	char_to_size(char *nbr)
+size_t	char_to_size(char *nbr)
 {
-  ssize_t	index;
-  ssize_t	total;
+  size_t	index;
+  size_t	total;
 
   index = 0;
   total = 0;
+  printf("size : %zu\n", my_strlen(nbr) - 1);
   while (index <= my_strlen(nbr) - 1)
     {
       total = total * 10 + (nbr[index] - '0');
+      printf("total : %zu\n", total);
       index++;
     }
   return (total);
 }
 
-ssize_t	get_result_size(ssize_t n, ssize_t b, ssize_t d)
+size_t	get_result_size(size_t n, size_t b, size_t d)
 {
-  ssize_t	i;
+  size_t	i;
 
   i = 0;
   while (n != 0)
@@ -44,14 +46,15 @@ ssize_t	get_result_size(ssize_t n, ssize_t b, ssize_t d)
 
 char	*ten_to_base(char *nbr, char *base)
 {
-  ssize_t	n;
+  size_t	n;
   char		*m;
-  ssize_t	d;
-  ssize_t	r;
-  ssize_t	b;
-  ssize_t	i;
+  size_t	d;
+  size_t	r;
+  size_t	b;
+  size_t	i;
 
   b = my_strlen(base);
+  printf("nbr : %s\n", nbr);
   n = char_to_size(nbr);
   i = get_result_size(n, b, d) - 1;
   m = malloc(sizeof(char *) * (i + 1));
@@ -63,4 +66,5 @@ char	*ten_to_base(char *nbr, char *base)
       m[i] = base[r];
       i--;
     }
+  return (m);
 }
