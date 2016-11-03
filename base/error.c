@@ -56,3 +56,28 @@ int	error_cmp_op_base(char *base, char *op)
     }
   return (0);
 }
+
+int	doublechar_in_base(char *base)
+{
+  size_t	i;
+  size_t	b;
+
+  i = 0;
+  b = 1;
+  while (i != my_strlen(base))
+    {
+      if (base[b] != base[i] && b == my_strlen(base) - 1)
+	{
+	  i++;
+	  b = i + 1;
+	}
+      else if (base[b] == base[i])
+	return (EXIT_BASE);
+      else if (base[b] != base[i])
+	{
+	  if (b == my_strlen(base))
+	    return (0);
+	  b++;
+	}
+    }
+}
