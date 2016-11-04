@@ -5,19 +5,15 @@
 ** Login   <guillaume.mardon@epitech.eu@epitech.eu>
 **
 ** Started on  Sun Oct 30 15:01:49 2016 Guillaume MARDON
-** Last update Fri Nov  4 15:14:54 2016 Victor Le Dantec
+** Last update Fri Nov  4 16:40:30 2016 Guillaume MARDON
 */
-
-#include <stdlib.h>
-
 char	*str_set_zero(char *str, int size);
 char	*equalise_numbers(char *val1, char *val2);
-int	is_neg(char *nbr);
+int		is_neg(char *nbr);
 char	*substr(char *src, int bindex);
 char	*remove_zeros(char *str);
-void	*put_with_offset(char *str, int number, int zcount);
-int	is_greater(char *val1, char *val2);
+void	*put_nbr_with_offset(char *str, int number, int zcount);
+void	*put_chars_with_offset(char *str, char *with, int zcount);
+int		is_greater(char *val1, char *val2);
 char	*set_negative(char *str);
 char	*clean_negation(char *str);
-size_t	my_strlen(char *);
-char	*my_strcpy(char *, char *);

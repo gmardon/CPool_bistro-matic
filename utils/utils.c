@@ -5,7 +5,7 @@
 ** Login   <guillaume.mardon@epitech.eu>
 **
 ** Started on  Wed Oct 26 07:01:21 2016 Guillaume MARDON
-** Last update Fri Nov  4 15:34:11 2016 Victor Le Dantec
+** Last update Fri Nov  4 16:40:22 2016 Guillaume MARDON
 */
 #include "utils.h"
 
@@ -38,13 +38,14 @@ char	*clean_negation(char *str)
 char	*set_negative(char *str)
 {
   char	*nstr;
-  int	index;
+	int		index;
 
   str = remove_zeros(str);
   nstr = malloc(sizeof(char *) * (my_strlen(str) + 1));
   my_strcpy(nstr + 1, str);
   nstr[0] = '-';
-  return (nstr);
+  //free(str);
+  return nstr;
 }
 
 char	*equalise_numbers(char *val1, char *val2)
@@ -108,7 +109,7 @@ char	*substr(char *src, int bindex)
   return (result);
 }
 
-void	*put_with_offset(char *str, int number, int zcount)
+void	*put_nbr_with_offset(char *str, int number, int zcount)
 {
   int length;
   int index;
@@ -125,6 +126,28 @@ void	*put_with_offset(char *str, int number, int zcount)
       number /= 10;
     }
   str[length - index] = number + 48;
+}
+
+void	*put_chars_with_offset(char *str, char *with, int zcount)
+{
+  printf("zcount: %d\n", zcount);
+  int length;
+  int index;
+
+  length = my_strlen(str);
+  index = 0;
+  while (zcount != index)
+    {
+      str[length - (index++)] = '0';
+    }
+  printf("len:%d\n", length);
+  while (index < length)
+    {
+      str[length - (index++)] = *with;
+      with++;
+    }
+  printf("str:%s", str);
+  return (str);
 }
 
 int	is_greater(char *val1, char *val2)
