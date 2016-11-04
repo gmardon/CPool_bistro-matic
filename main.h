@@ -5,7 +5,7 @@
 ** Login   <victor.le-dantec@epitech.net>
 ** 
 ** Started on  Fri Nov  4 15:38:21 2016 Victor Le Dantec
-** Last update Fri Nov  4 15:48:28 2016 Victor Le Dantec
+** Last update Fri Nov  4 17:04:30 2016 Victor Le Dantec
 */
 
 #include <stdlib.h>
@@ -23,3 +23,4 @@ size_t	char_to_size(char *);
 size_t	my_strlen(char *);
 char	*my_strdup(char *);
 void	my_putstr(char *);
+void	base_op_convert(char *, char *);

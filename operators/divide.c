@@ -5,10 +5,10 @@
 ** Login   <guillaume.mardon@epitech.eu@epitech.eu>
 **
 ** Started on  Sun Oct 30 14:32:57 2016 Guillaume MARDON
-** Last update Fri Nov  4 16:40:11 2016 Guillaume MARDON
+** Last update Fri Nov  4 17:03:29 2016 Victor Le Dantec
 */
-#include <stdlib.h>
-//#include "divide.h"
+
+#include "divide.h"
 
 char	*divide(char *val1, char *val2)
 {

@@ -5,7 +5,7 @@
 ** Login   <guillaume.mardon@epitech.eu>
 **
 ** Started on  Mon Oct 24 10:03:22 2016 Guillaume MARDON
-** Last update Fri Nov  4 15:58:58 2016 Victor Le Dantec
+** Last update Fri Nov  4 16:55:03 2016 Victor Le Dantec
 */
 
 #include "main.h"
@@ -55,6 +55,7 @@ char	*processing(char **argv)
   char	**temppostfix;
 
   buffer = read_stdout(char_to_size(argv[3]) + 1);
+  base_op_convert(buffer, argv[2]);
   temppostfix = malloc(sizeof(char **));
   temppostfix[2] = malloc(sizeof(char *) * my_strlen(buffer));
   my_strncpy(temppostfix[2], buffer, my_strlen(buffer) - 1);
