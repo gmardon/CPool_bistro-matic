@@ -5,12 +5,13 @@
 ** Login   <victor.le-dantec@epitech.net>
 ** 
 ** Started on  Thu Oct  6 13:17:46 2016 Victor Le Dantec
-** Last update Fri Nov  4 15:58:05 2016 Victor Le Dantec
+** Last update Fri Nov  4 16:18:22 2016 Victor Le Dantec
 */
 
 #include <stdlib.h>
 
 size_t	*my_strlen(char *);
+void	write(int, void *, size_t);
 
 void	my_putstr(char *str)
 {

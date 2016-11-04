@@ -5,9 +5,13 @@
 ** Login   <victor.le-dantec@epitech.net>
 ** 
 ** Started on  Wed Oct 12 13:32:31 2016 Victor Le Dantec
-** Last update Wed Oct 12 14:16:34 2016 Victor Le Dantec
+** Last update Fri Nov  4 16:05:45 2016 Victor Le Dantec
 */
+
 #include <stdlib.h>
+
+void	my_putchar(char);
+void	my_putstr(char *);
 
 int	my_show_wordtab(char **tab)
 {

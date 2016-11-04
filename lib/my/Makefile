@@ -5,7 +5,7 @@
 ## Login   <victor.le-dantec@epitech.net>
 ## 
 ## Started on  Fri Oct 14 13:53:29 2016 Victor Le Dantec
-## Last update Fri Nov  4 15:16:19 2016 Victor Le Dantec
+## Last update Fri Nov  4 16:19:04 2016 Victor Le Dantec
 ##
 NAME	=	libmy.a
 

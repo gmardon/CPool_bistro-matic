@@ -5,8 +5,11 @@
 ** Login   <victor.le-dantec@epitech.net>
 ** 
 ** Started on  Tue Oct 11 09:57:18 2016 Victor Le Dantec
-** Last update Tue Oct 11 10:03:43 2016 Victor Le Dantec
+** Last update Fri Nov  4 16:11:48 2016 Victor Le Dantec
 */
+
+void	my_putchar(char);
+
 int	my_put_nbr(int nb)
 {
   int	i;

@@ -5,8 +5,9 @@
 ** Login   <victor.le-dantec@epitech.net>
 ** 
 ** Started on  Mon Oct 10 17:45:05 2016 Victor Le Dantec
-** Last update Mon Oct 10 19:30:13 2016 Victor Le Dantec
+** Last update Fri Nov  4 16:06:51 2016 Victor Le Dantec
 */
+
 char	*my_str_isprintable(char *str)
 {
   int	i;

@@ -5,8 +5,13 @@
 ** Login   <victor.le-dantec@epitech.net>
 **
 ** Started on  Mon Oct 10 11:45:59 2016 Victor Le Dantec
-** Last update Mon Oct 10 20:16:03 2016 John Doe
+** Last update Fri Nov  4 16:17:15 2016 Victor Le Dantec
 */
+
+#include <stdlib.h>
+
+size_t	my_strlen(char *);
+
 char	*my_revstr(char *str)
 {
   int	i;
@@ -23,5 +28,5 @@ char	*my_revstr(char *str)
       h--;
       i++;
     }
-        return (str);
+  return (str);
 }

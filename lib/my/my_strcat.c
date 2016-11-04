@@ -5,8 +5,13 @@
 ** Login   <victor.le-dantec@epitech.net>
 ** 
 ** Started on  Tue Oct 11 16:20:10 2016 Victor Le Dantec
-** Last update Tue Oct 11 17:38:22 2016 Victor Le Dantec
+** Last update Fri Nov  4 16:16:58 2016 Victor Le Dantec
 */
+
+#include <stdlib.h>
+
+size_t	my_strlen(char *);
+
 char	*my_strcat(char *dest, char *src)
 {
   int	destlen;

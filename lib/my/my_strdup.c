@@ -5,9 +5,12 @@
 ** Login   <victor.le-dantec@epitech.net>
 ** 
 ** Started on  Wed Oct 12 10:18:00 2016 Victor Le Dantec
-** Last update Wed Oct 12 10:40:14 2016 Victor Le Dantec
+** Last update Fri Nov  4 16:06:12 2016 Victor Le Dantec
 */
+
 #include <stdlib.h>
+
+size_t	my_strlen(char *);
 
 char	*my_strdup(char *src)
 {
