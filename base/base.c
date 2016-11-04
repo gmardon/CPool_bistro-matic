@@ -55,6 +55,20 @@ char	*size_to_str(size_t total)
   return (str);
 }
 
+int	clean_zero(char *nbr, char *base)
+{
+  size_t	i;
+
+  i = 0;
+  while (nbr[i] != '\0')
+    {
+      if (nbr[i] != base[0])
+	return (1);
+      i++;
+    }
+  return (84);
+}
+
 char	*convert_to_ten(char *nbr, char *base)
 {
   size_t	total;
@@ -72,16 +86,16 @@ char	*convert_to_ten(char *nbr, char *base)
     {
       if (nbr[index] == base[kindex])
 	{
-	  total += my_power_rec(my_strlen(base), pow) * (val_base[kindex] - 48);
-	  index++;
+	  total += my_power_rec(my_strlen(base), pow--) * (val_base[kindex] - 48);
 	  kindex = 0;
-	  pow--;
+	  index++;
 	}
       else
 	kindex++;
     }
-  final = size_to_str(total);
-  return (final);
+  val_base[0] = base[0];
+  val_base[1] = '\0';
+  return ((clean_zero(nbr, base) == 1) ? size_to_str(total) : val_base);
 }
 
 char    *my_baseptr(char *str, char **endptr, char *base)
@@ -139,7 +153,7 @@ char    *my_opptr2(char *str, char **endptr)
     }
 }
 
-char	*whole_convert(char *base, char **str)
+/*char	*whole_convert(char *base, char **str)
 {
   char	*final;
   
@@ -153,4 +167,4 @@ char	*whole_convert(char *base, char **str)
 	final = my_strcat(final, my_baseptr(str[2], str, base));
     }
   return (final);
-}
+  }*/
