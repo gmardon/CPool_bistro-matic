@@ -14,3 +14,5 @@
 #define EXIT_MALLOC     84
 #define EXIT_READ       84
 #define EXIT_OPS        84
+
+#define SYNTAX_ERROR_MSG "Syntax error"

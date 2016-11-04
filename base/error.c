@@ -13,7 +13,7 @@
 
 size_t	my_strlen(char *);
 
-int	error_base(char *base, char *nbr)
+int	error_base_nbr(char *base, char *nbr)
 {
   size_t	n;
   size_t	b;
@@ -22,6 +22,9 @@ int	error_base(char *base, char *nbr)
   b = 0;
   while (n != my_strlen(nbr))
     {
+      while (nbr[n] == '+' || nbr[n] == '-' || nbr[n] == '*' || nbr[n] == '/'
+	  || nbr[n] == '%' || nbr[n] == '(' || nbr[n] == ')')
+	n++;
       if (base[b] == nbr[n])
 	{
 	  n++;
@@ -103,3 +106,33 @@ int	check_parent(char *expr)
   else
     return (84);
 }
+
+int     doubleop_in_baseop(char *base_op)
+{
+  size_t        i;
+  size_t        b;
+
+  i = 0;
+  b = 1;
+  if (my_strlen(base_op) != 7)
+    return (EXIT_OPS);
+  while (i != my_strlen(base_op))
+    {
+      if (base_op[b] != base_op[i] && b == my_strlen(base_op) - 1)
+	{
+	  i++;
+	  b = i + 1;
+	}
+      else if (base_op[b] == base_op[i])
+	return (EXIT_OPS);
+      else if (base_op[b] != base_op[i])
+	{
+	  if (b == my_strlen(base_op))
+	    return (0);
+	  b++;
+	}
+    }
+}
+
+//fois div ou modulo apres parenthese ouverte
+//operateur avant parenthese fermante
