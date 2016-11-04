@@ -5,7 +5,7 @@
 ** Login   <moana.dumora@epitech.eu@epitech.eu>
 **
 ** Started on  Sun Oct 30 17:11:01 2016 Moana Dumora
-** Last update Fri Nov  4 19:13:40 2016 Victor Le Dantec
+** Last update Fri Nov  4 19:42:33 2016 Victor Le Dantec
 */
 
 #include "parser.h"
@@ -74,12 +74,13 @@ char	**torpn(char **str)
 	    }
 	  else
 	    {
-	      if (str[1][0] == '-' && stackop[my_strlen(stackop) - 1] == '(')
+	      if (str[1][0] == '-' && stackop[my_strlen(stackop) - 1] == '('
+		  && (str[1][1] >= '0' && str[1][1] <= '9'))
 		{
 		  pushstack(str, stack, index);
 		  index++;
 		}
-	      else if (str[1][0] == '-' && index == 0)
+	      else if (str[1][0] == '-' && index == 0 && (str[1][1] >= '0' && str[1][1] <= '9'))
 		{
 		  pushstack(str, stack, index);
 		  index++;
