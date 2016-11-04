@@ -5,11 +5,12 @@
 ## Login   <victor.le-dantec@epitech.net>
 ##
 ## Started on  Mon Oct 24 10:23:27 2016 Victor Le Dantec
-## Last update Fri Nov  4 16:54:29 2016 Victor Le Dantec
+## Last update Fri Nov  4 17:36:19 2016 Victor Le Dantec
 ##
 NAME		=	calc
 
 SRC		=	main.c			\
+			help.c			\
 			operators/add.c 	\
 			operators/multiply.c	\
 			operators/minus.c	\
@@ -18,6 +19,7 @@ SRC		=	main.c			\
 			base/base.c		\
 			base/ten_to_base.c	\
 			base/convert_op.c	\
+			base/all_errors.c	\
 			parsing/calculate.c	\
 			parsing/int_len.c	\
 			parsing/my_numberptr.c	\

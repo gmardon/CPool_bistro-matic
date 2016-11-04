@@ -5,7 +5,7 @@
 ** Login   <moana.dumora@epitech.eu>
 **
 ** Started on  Thu Nov  3 13:25:01 2016 Moana Dumora
-** Last update Thu Nov  3 13:25:05 2016 Moana Dumora
+** Last update Fri Nov  4 18:05:09 2016 Victor Le Dantec
 */
 
 #include <stdlib.h>
@@ -91,6 +91,7 @@ int	check_parent(char *expr)
   size_t	k;
 
   i = 0;
+  k = 0;
   while (expr[i] != '\0')
     {
       if (expr[i] == '(')

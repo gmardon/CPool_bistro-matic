@@ -5,7 +5,7 @@
 ** Login   <moana.dumora@epitech.eu@epitech.eu>
 **
 ** Started on  Fri Nov  4 16:02:33 2016 Moana Dumora
-** Last update Fri Nov  4 16:02:37 2016 Moana Dumora
+** Last update Fri Nov  4 19:06:44 2016 Victor Le Dantec
 */
 
 #include <stdlib.h>
@@ -18,15 +18,17 @@ int	check_parent_op(char *expr)
   i = 0;
   while (expr[i]!= '\0')
     {
+      if (expr[i] == '(' && (expr[i - 1] >= '0' && expr[i - 1] <= '9'))
+	return (84);
       if (expr[i] == '(')
 	{
 	  if (expr[i + 1] == '*' || expr[i + 1] == '/' || expr[i + 1] == '%')
-	    return  (84);
+	    return (84);
 	}
       if (expr[i] == ')')
 	{
 	  if (expr[i - 1] == '*' || expr[i - 1] == '/' || expr[i - 1] == '%')
-	    return  (84);
+	    return (84);
 	}
       i++;
     }
@@ -42,12 +44,13 @@ int	check_multiple_op(char *expr)
     {
       if (expr[i] == '*' || expr[i] == '/' || expr[i] == '%')
 	{
-	  if (expr[i + 1] < '0' || expr[i + 1] > '9')
+	  if ((expr[i + 1] < '0' || expr[i + 1] > '9') && expr[i + 1] != '(')
 	    return (84);
 	}
       if (expr[i] == '+' || expr[i] == '-')
 	{
-	  if ((expr[i + 1] != '+' || expr[i + 1] != '-') && (expr[i + 1] < '0' || expr[i + 1] > '9'))
+	  if ((expr[i + 1] != '+' || expr[i + 1] != '-')
+	      && (expr[i + 1] < '0'|| expr[i + 1] > '9') && expr[i + 1] != '(')
 	    return (84);
 	}
       i++;

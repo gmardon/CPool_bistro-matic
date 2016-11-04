@@ -5,10 +5,11 @@
 ** Login   <guillaume.mardon@epitech.eu>
 **
 ** Started on  Mon Oct 24 10:03:22 2016 Guillaume MARDON
-** Last update Fri Nov  4 16:55:03 2016 Victor Le Dantec
+** Last update Fri Nov  4 17:53:46 2016 Victor Le Dantec
 */
 
 #include "main.h"
+#include "base/error.h"
 
 char	*read_stdout(size_t buffsize)
 {
@@ -47,22 +48,8 @@ char	*remove_minus(char *buffer)
   return (tmp);
 }
 
-char	*processing(char **argv)
+char	*negative_or_not(char **argv, char *buffer, char *tmp)
 {
-  char  *buffer;
-  char  *tmp;
-  char  **postfix;
-  char	**temppostfix;
-
-  buffer = read_stdout(char_to_size(argv[3]) + 1);
-  base_op_convert(buffer, argv[2]);
-  temppostfix = malloc(sizeof(char **));
-  temppostfix[2] = malloc(sizeof(char *) * my_strlen(buffer));
-  my_strncpy(temppostfix[2], buffer, my_strlen(buffer) - 1);
-  buffer = whole_convert(argv[1], temppostfix);
-  temppostfix[1] = malloc(sizeof(char *) * my_strlen(buffer));
-  my_strcpy(temppostfix[1], buffer);
-  buffer = calculate_postfix(torpn(temppostfix));
   if (buffer[0] == '-')
     {
       buffer = ten_to_base(remove_minus(buffer), argv[1]);
@@ -76,15 +63,28 @@ char	*processing(char **argv)
   return (buffer);
 }
 
-void	display_help()
+char	*processing(char **argv)
 {
-  my_putstr("USAGE\n");
-  my_putstr("           ./calc base operators size_read\n");
-  my_putchar('\n');
-  my_putstr("DESCRIPTION\n");
-  my_putstr("           base       all the symbols of the base\n");
-  my_putstr("           operators  the symbols for the parentheses and the 5 operators\n");
-  my_putstr("           size_read  numbers of characters to be read\n");
+  char  *buffer;
+  char  *tmp;
+  char  **postfix;
+  char	**temppostfix;
+
+  buffer = read_stdout(char_to_size(argv[3]) + 1);
+  base_op_convert(buffer, argv[2]);
+  temppostfix = malloc(sizeof(char **));
+  temppostfix[2] = malloc(sizeof(char *) * my_strlen(buffer));
+  my_strncpy(temppostfix[2], buffer, my_strlen(buffer) - 1);
+  if (all_check(temppostfix[2], argv[1], argv[2]) == 0)
+    {
+      buffer = whole_convert(argv[1], temppostfix);
+      temppostfix[1] = malloc(sizeof(char *) * my_strlen(buffer));
+      my_strcpy(temppostfix[1], buffer);
+      buffer = calculate_postfix(torpn(temppostfix));
+      return (negative_or_not(argv, buffer, tmp));
+    }
+  else
+    return (SYNTAX_ERROR_MSG);
 }
 
 int	main(int argc, char **argv)

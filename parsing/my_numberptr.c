@@ -5,7 +5,7 @@
 ** Login   <moana.dumora@epitech.eu>
 **
 ** Started on  Sun Oct 30 15:01:11 2016 Moana Dumora
-** Last update Fri Nov  4 15:50:35 2016 Victor Le Dantec
+** Last update Fri Nov  4 18:48:56 2016 Victor Le Dantec
 */
 
 #include "my_numberptr.h"
@@ -21,7 +21,7 @@ char	*my_nbrptr(char *str, char **endptr)
   nbr = malloc(sizeof(char *) * (int_len(str) + 2));
   while (*str != '\0')
     {
-      if (*str >= '0' && *str <= '9')
+      if ((*str >= '0' && *str <= '9') || *str == '-')
 	{
 	  nbr[k] = *str;
 	  k++;
