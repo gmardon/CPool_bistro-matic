@@ -153,7 +153,7 @@ char    *my_opptr2(char *str, char **endptr)
     }
 }
 
-/*char	*whole_convert(char *base, char **str)
+char	*whole_convert(char *base, char **str)
 {
   char	*final;
   
@@ -167,4 +167,4 @@ char    *my_opptr2(char *str, char **endptr)
 	final = my_strcat(final, my_baseptr(str[2], str, base));
     }
   return (final);
-  }*/
+}
