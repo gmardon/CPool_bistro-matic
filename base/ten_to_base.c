@@ -63,5 +63,11 @@ char	*ten_to_base(char *nbr, char *base)
       m[i] = base[r];
       i--;
     }
+  if (nbr[0] == '0')
+    {
+      m[0] = base[0];
+      m[1] = '\0';
+      return (m);
+    }
   return (m);
 }
