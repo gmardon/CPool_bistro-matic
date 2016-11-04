@@ -5,11 +5,22 @@
 ## Login   <victor.le-dantec@epitech.net>
 ##
 ## Started on  Mon Oct 24 10:23:27 2016 Victor Le Dantec
-## Last update Sun Oct 30 18:33:43 2016 Guillaume MARDON
+## Last update Thu Nov  3 09:19:22 2016 Victor Le Dantec
 ##
 NAME		=	calc
 
-SRC		=	main.c ./operators/add.c ./operators/multiply.c ./operators/minus.c ./utils/utils.c
+SRC		=	main.c			\
+			operators/add.c 	\
+			operators/multiply.c	\
+			operators/minus.c	\
+			utils/utils.c		\
+			base/base.c		\
+			base/ten_to_base.c	\
+			parsing/calculate.c	\
+			parsing/int_len.c	\
+			parsing/my_numberptr.c	\
+			parsing/parser.c	\
+			parsing/utils.c
 
 RM		=	rm -f
 

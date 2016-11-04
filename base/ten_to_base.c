@@ -5,7 +5,7 @@
 ** Login   <moana.dumora@epitech.eu@epitech.eu>
 **
 ** Started on  Tue Nov  1 19:43:28 2016 Moana Dumora
-** Last update Tue Nov  1 22:22:43 2016 Moana Dumora
+** Last update Thu Nov  3 15:01:57 2016 Victor Le Dantec
 */
 
 #include <stdio.h>
@@ -20,11 +20,9 @@ size_t	char_to_size(char *nbr)
 
   index = 0;
   total = 0;
-  printf("size : %zu\n", my_strlen(nbr) - 1);
   while (index <= my_strlen(nbr) - 1)
     {
       total = total * 10 + (nbr[index] - '0');
-      printf("total : %zu\n", total);
       index++;
     }
   return (total);
@@ -54,7 +52,6 @@ char	*ten_to_base(char *nbr, char *base)
   size_t	i;
 
   b = my_strlen(base);
-  printf("nbr : %s\n", nbr);
   n = char_to_size(nbr);
   i = get_result_size(n, b, d) - 1;
   m = malloc(sizeof(char *) * (i + 1));

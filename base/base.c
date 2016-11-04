@@ -5,7 +5,7 @@
 ** Login   <moana.dumora@epitech.eu@epitech.eu>
 **
 ** Started on  Mon Oct 31 15:29:25 2016 Moana Dumora
-** Last update Mon Oct 31 17:29:28 2016 Moana Dumora
+** Last update Thu Nov  3 14:17:02 2016 Victor Le Dantec
 */
 
 #include <stdio.h>
@@ -112,7 +112,7 @@ char    *my_baseptr(char *str, char **endptr, char *base)
     }
 }
 
-char    *my_opptr(char *str, char **endptr)
+char    *my_opptr2(char *str, char **endptr)
 {
   int   i;
   char  *op;
@@ -148,7 +148,7 @@ char	*whole_convert(char *base, char **str)
     {
       if (str[2][0] == '-' || str[2][0] == '+' || str[2][0] == '*' || str[2][0] == '/'
 	  || str[2][0] == '%' || str[2][0] == '(' || str[2][0] == ')')
-	final = my_strcat(final, my_opptr(str[2], str));
+	final = my_strcat(final, my_opptr2(str[2], str));
       else
 	final = my_strcat(final, my_baseptr(str[2], str, base));
     }
