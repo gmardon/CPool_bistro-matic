@@ -5,7 +5,7 @@
 ** Login   <guillaume.mardon@epitech.eu>
 **
 ** Started on  Mon Oct 24 10:03:22 2016 Guillaume MARDON
-** Last update Thu Nov  3 15:10:04 2016 Victor Le Dantec
+** Last update Fri Nov  4 10:34:44 2016 Victor Le Dantec
 */
 
 #include <stdio.h>
@@ -36,9 +36,22 @@ char	*read_stdout()
   return (my_strdup(buff));
 }
 
+char	*remove_minus(char *buffer)
+{
+  char	*tmp;
+  size_t	i;
+
+  i = 0;
+  tmp = malloc(sizeof(char *) * my_strlen(buffer) + 1);  
+  while (buffer[++i] != '\0')
+    tmp[i - 1] = buffer[i];
+  return (tmp);
+}
+
 int	main(int argc, char **argv)
 {
   char	*buffer;
+  char	*tmp;
   char	**postfix;
   char	**temppostfix;
 
@@ -47,9 +60,20 @@ int	main(int argc, char **argv)
   temppostfix[2] = malloc(sizeof(char *) * my_strlen(buffer));
   my_strncpy(temppostfix[2], buffer, my_strlen(buffer) - 1);
   buffer = whole_convert(argv[1], temppostfix);
+  printf("base 10 = %s\n", buffer);
   temppostfix[1] = malloc(sizeof(char *) * my_strlen(buffer));
   my_strcpy(temppostfix[1], buffer);
   buffer = calculate_postfix(torpn(temppostfix));
-  buffer = ten_to_base(buffer, argv[1]);
+  printf("result in base 10 = %s\n", buffer); 
+  if (buffer[0] == '-')
+    {
+      buffer = ten_to_base(remove_minus(buffer), argv[1]);
+      tmp = malloc(sizeof(char *) * my_strlen(buffer) + 1);
+      tmp[0] = '-';
+      tmp[1] = '\0';
+      buffer = my_strcat(tmp, buffer);
+    }
+  else
+    buffer = ten_to_base(buffer, argv[1]);
   printf("%s\n", buffer);
 }
