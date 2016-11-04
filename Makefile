@@ -5,7 +5,7 @@
 ## Login   <victor.le-dantec@epitech.net>
 ##
 ## Started on  Mon Oct 24 10:23:27 2016 Victor Le Dantec
-## Last update Fri Nov  4 10:53:45 2016 Victor Le Dantec
+## Last update Fri Nov  4 14:49:14 2016 Victor Le Dantec
 ##
 NAME		=	calc
 
@@ -33,7 +33,7 @@ $(NAME):
 	@cd lib/my/ && make
 	@echo "-------------------Done Making Library-----------------"
 	@echo "Making Bistro-Matic .."
-	@gcc -g -w $(SRC) -o $(NAME) -L./lib -lmy $(DEPS)
+	gcc -g $(SRC) -o $(NAME) -L./lib -lmy $(DEPS)
 	@echo "-------------------Done Making-------------------------"
 
 clean:

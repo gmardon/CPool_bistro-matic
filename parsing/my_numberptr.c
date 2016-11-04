@@ -1,17 +1,14 @@
 /*
-** my_numberptr.c for bitro in /home/moana/Piscine/CPool_bistro-matic/parsing/
+** my_numberptr.c for bistro in /home/moana/Piscine/CPool_bistro-matic/parsing/
 **
 ** Made by Moana Dumora
 ** Login   <moana.dumora@epitech.eu>
 **
 ** Started on  Sun Oct 30 15:01:11 2016 Moana Dumora
-** Last update Sun Oct 30 15:01:19 2016 Moana Dumora
+** Last update Fri Nov  4 15:50:35 2016 Victor Le Dantec
 */
 
-#include <stdlib.h>
-#include <stdio.h>
-
-int	int_len(char *);
+#include "my_numberptr.h"
 
 char	*my_nbrptr(char *str, char **endptr)
 {

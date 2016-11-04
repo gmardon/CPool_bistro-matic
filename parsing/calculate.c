@@ -5,14 +5,15 @@
 ** Login   <victor.le-dantec@epitech.eu>
 ** 
 ** Started on  Wed Nov  2 09:16:30 2016 Victor Le Dantec
-** Last update Fri Nov  4 09:30:12 2016 Victor Le Dantec
+** Last update Fri Nov  4 15:49:30 2016 Victor Le Dantec
 */
 
-#include <stdlib.h>
+#include "calculate.h"
 
 char    *getlastnumber(char **str, size_t *index)
 {
-  while (str[*index][0] == ' ' || str[*index][0] == '+' || str[*index][0] == '-'
+  while (str[*index][0] == ' ' || str[*index][0] == '+'
+	 || (str[*index][0] == '-' && str[*index][1] == '\0')
 	 || str[*index][0] == '/' || str[*index][0] == '*' || str[*index][0] == '%')
       *index = *index - 1;
   return (str[*index]);
@@ -29,7 +30,7 @@ char	*calculate_postfix(char **str)
     {
       if (my_strstr(str[indexop], "+") != NULL)
 	parsing_calculate(str, index, indexop, '+');
-      if (my_strstr(str[indexop], "-") != NULL)
+      if (my_strstr(str[indexop], "-") != NULL && str[indexop][1] == '\0')
 	parsing_calculate(str, index, indexop, '-');
       if (my_strstr(str[indexop], "*") != NULL)
 	parsing_calculate(str, index, indexop, '*');

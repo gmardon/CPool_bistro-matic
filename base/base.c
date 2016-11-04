@@ -5,15 +5,14 @@
 ** Login   <moana.dumora@epitech.eu@epitech.eu>
 **
 ** Started on  Mon Oct 31 15:29:25 2016 Moana Dumora
-** Last update Thu Nov  3 14:17:02 2016 Victor Le Dantec
+** Last update Fri Nov  4 15:10:32 2016 Victor Le Dantec
 */
 
-#include <stdio.h>
 #include <stdlib.h>
 
 size_t	my_strlen(char *);
-
 int	my_power_rec(int, int);
+char	*my_strcat(char *, char *);
 
 char	*etvalbase(char *base)
 {

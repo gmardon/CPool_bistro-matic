@@ -5,8 +5,9 @@
 ** Login   <guillaume.mardon@epitech.eu@epitech.eu>
 **
 ** Started on  Sun Oct 30 14:28:34 2016 Guillaume MARDON
-** Last update Fri Nov  4 10:49:31 2016 Guillaume MARDON
+** Last update Fri Nov  4 15:22:50 2016 Victor Le Dantec
 */
+
 #include "minus.h"
 
 char	*minus_handle_negative(char *val1, char *val2)

@@ -5,7 +5,11 @@
 ** Login   <guillaume.mardon@epitech.eu@epitech.eu>
 **
 ** Started on  Sun Oct 30 14:30:45 2016 Guillaume MARDON
-** Last update Tue Nov  1 21:27:42 2016 Guillaume MARDON
+** Last update Fri Nov  4 15:37:58 2016 Victor Le Dantec
 */
+
+#include <stdlib.h>
+
 char	*add_handle_negative(char *val1, char *val2);
 char	*add(char *val1, char *val2);
+char	*minus(char *, char *);

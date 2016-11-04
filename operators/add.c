@@ -5,7 +5,7 @@
 ** Login   <guillaume.mardon@epitech.eu@epitech.eu>
 **
 ** Started on  Sun Oct 30 14:27:30 2016 Guillaume MARDON
-** Last update Thu Nov  3 17:38:13 2016 Guillaume MARDON
+** Last update Fri Nov  4 15:35:03 2016 Victor Le Dantec
 */
 #include "../utils/utils.h"
 #include "add.h"
@@ -15,14 +15,14 @@ char	*add_handle_negative(char *val1, char *val2)
   if (is_neg(val1) && !is_neg(val2))
     {
       if (is_greater(val1 + 1, val2) == 1)
-	  			return (set_negative(minus(val1 + 1, val2)));
+	return (set_negative(minus(val1 + 1, val2)));
       else if (is_greater(val1 + 1, val2) == -1)
-					return (minus(val2, val1 + 1));
+	return (minus(val2, val1 + 1));
       else
-					return ("0");
+	return ("0");
     }
   else if (!is_neg(val1) && is_neg(val2))
-      return (add_handle_negative(val2, val1));
+    return (add_handle_negative(val2, val1));
   else if (is_neg(val1) && is_neg(val2))
     return (set_negative(add(val1 + 1, val2 + 1)));
 }
@@ -54,7 +54,7 @@ char	*add(char *val1, char *val2)
       result[index + 1] = value + 48;
       index--;
       if (index == -1 && retained != 0)
-				result[0] = retained + 48;
+	result[0] = retained + 48;
     }
   return (remove_zeros(result));
 }

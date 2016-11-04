@@ -5,7 +5,7 @@
 ** Login   <guillaume.mardon@epitech.eu>
 **
 ** Started on  Wed Oct 26 07:01:21 2016 Guillaume MARDON
-** Last update Thu Nov  3 17:37:42 2016 Guillaume MARDON
+** Last update Fri Nov  4 15:34:11 2016 Victor Le Dantec
 */
 #include "utils.h"
 
@@ -38,14 +38,13 @@ char	*clean_negation(char *str)
 char	*set_negative(char *str)
 {
   char	*nstr;
-	int		index;
+  int	index;
 
   str = remove_zeros(str);
   nstr = malloc(sizeof(char *) * (my_strlen(str) + 1));
   my_strcpy(nstr + 1, str);
   nstr[0] = '-';
-  //free(str);
-  return nstr;
+  return (nstr);
 }
 
 char	*equalise_numbers(char *val1, char *val2)

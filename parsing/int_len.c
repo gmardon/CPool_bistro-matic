@@ -5,11 +5,10 @@
 ** Login   <moana.dumora@epitech.eu@epitech.eu>
 **
 ** Started on  Sun Oct 30 17:45:59 2016 Moana Dumora
-** Last update Sun Oct 30 17:46:13 2016 Moana Dumora
+** Last update Fri Nov  4 15:02:12 2016 Victor Le Dantec
 */
 
 #include <stdlib.h>
-#include <stdio.h>
 
 int     int_len(char *str)
 {

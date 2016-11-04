@@ -5,22 +5,21 @@
 ** Login   <guillaume.mardon@epitech.eu>
 **
 ** Started on  Mon Oct 24 10:03:22 2016 Guillaume MARDON
-** Last update Fri Nov  4 10:34:44 2016 Victor Le Dantec
+** Last update Fri Nov  4 15:58:58 2016 Victor Le Dantec
 */
 
-#include <stdio.h>
-#define BUFF_SIZE (4096)
+#include "main.h"
 
-char	*read_stdout()
+char	*read_stdout(size_t buffsize)
 {
-  char  buff[BUFF_SIZE + 1];
+  char  buff[buffsize + 1];
   int   total_read;
   ssize_t       len;
 
   total_read = 0;
-  while ((len = read(0, (buff + total_read), BUFF_SIZE)) != 0)
+  while ((len = read(0, (buff + total_read), buffsize)) != 0)
     {
-      if ((len + total_read) > BUFF_SIZE)
+      if ((len + total_read) > buffsize)
 	{
 	  my_putstr("None");
 	  return (84);
@@ -48,23 +47,21 @@ char	*remove_minus(char *buffer)
   return (tmp);
 }
 
-int	main(int argc, char **argv)
+char	*processing(char **argv)
 {
-  char	*buffer;
-  char	*tmp;
-  char	**postfix;
+  char  *buffer;
+  char  *tmp;
+  char  **postfix;
   char	**temppostfix;
 
-  buffer = read_stdout();
+  buffer = read_stdout(char_to_size(argv[3]) + 1);
   temppostfix = malloc(sizeof(char **));
   temppostfix[2] = malloc(sizeof(char *) * my_strlen(buffer));
   my_strncpy(temppostfix[2], buffer, my_strlen(buffer) - 1);
   buffer = whole_convert(argv[1], temppostfix);
-  printf("base 10 = %s\n", buffer);
   temppostfix[1] = malloc(sizeof(char *) * my_strlen(buffer));
   my_strcpy(temppostfix[1], buffer);
   buffer = calculate_postfix(torpn(temppostfix));
-  printf("result in base 10 = %s\n", buffer); 
   if (buffer[0] == '-')
     {
       buffer = ten_to_base(remove_minus(buffer), argv[1]);
@@ -75,5 +72,27 @@ int	main(int argc, char **argv)
     }
   else
     buffer = ten_to_base(buffer, argv[1]);
-  printf("%s\n", buffer);
+  return (buffer);
+}
+
+void	display_help()
+{
+  my_putstr("USAGE\n");
+  my_putstr("           ./calc base operators size_read\n");
+  my_putchar('\n');
+  my_putstr("DESCRIPTION\n");
+  my_putstr("           base       all the symbols of the base\n");
+  my_putstr("           operators  the symbols for the parentheses and the 5 operators\n");
+  my_putstr("           size_read  numbers of characters to be read\n");
+}
+
+int	main(int argc, char **argv)
+{
+  if (argv[1][0] == '-' && argv[1][1] == 'h' && argv[1][2] == '\0')
+    {
+      display_help();
+      return (0);
+    }
+  my_putstr(processing(argv));
+  my_putchar('\n');
 }

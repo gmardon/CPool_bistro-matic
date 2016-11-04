@@ -5,7 +5,7 @@
 ## Login   <victor.le-dantec@epitech.net>
 ## 
 ## Started on  Fri Oct 14 13:53:29 2016 Victor Le Dantec
-## Last update Mon Oct 24 12:26:14 2016 Victor Le Dantec
+## Last update Fri Nov  4 15:16:19 2016 Victor Le Dantec
 ##
 NAME	=	libmy.a
 
@@ -39,7 +39,6 @@ SRC	=	my_putchar.c		\
 		my_strstr.c		\
 		my_strupcase.c		\
 		my_swap.c		\
-		my_putstrerr.c		\
 		my_strdup.c		\
 		my_show_wordtab.c
 

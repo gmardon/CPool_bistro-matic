@@ -5,16 +5,14 @@
 ** Login   <victor.le-dantec@epitech.net>
 ** 
 ** Started on  Thu Oct  6 13:17:46 2016 Victor Le Dantec
-** Last update Thu Oct  6 19:12:05 2016 Victor Le Dantec
+** Last update Fri Nov  4 15:58:05 2016 Victor Le Dantec
 */
-int	my_putstr(char *str)
-{
-  int	i;
 
-  i = 0;
-  while (str[i] != '\0')
-    {
-      my_putchar(str[i]);
-      i++;
-    }
+#include <stdlib.h>
+
+size_t	*my_strlen(char *);
+
+void	my_putstr(char *str)
+{
+  write(1, str, my_strlen(str));
 }
