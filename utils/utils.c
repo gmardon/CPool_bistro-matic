@@ -5,7 +5,7 @@
 ** Login   <guillaume.mardon@epitech.eu>
 **
 ** Started on  Wed Oct 26 07:01:21 2016 Guillaume MARDON
-** Last update Sat Nov  5 17:48:27 2016 Guillaume MARDON
+** Last update Sat Nov  5 18:45:15 2016 Guillaume MARDON
 */
 #include "utils.h"
 
@@ -170,23 +170,4 @@ int	is_greater(char *val1, char *val2)
   else if (val2[index] == '-')
    	return 1;
   return (val1[index] < val2[index] ? -1 : 1);
-}
-
-void    *put_with_offset(char *str, int number, int zcount)
-{
-  int length;
-  int index;
-
-  length = my_strlen(str);
-  index = 0;
-  while (zcount != index)
-    {
-      str[length - (index++)] = '0';
-    }
-  if (number >= 10)
-    {
-      str[length - (index++)] = (number % 10) + 48;
-      number /= 10;
-    }
-  str[length - index] = number + 48;
 }
