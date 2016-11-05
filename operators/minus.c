@@ -5,7 +5,7 @@
 ** Login   <guillaume.mardon@epitech.eu@epitech.eu>
 **
 ** Started on  Sun Oct 30 14:28:34 2016 Guillaume MARDON
-** Last update Sat Nov  5 14:16:27 2016 Guillaume MARDON
+** Last update Sat Nov  5 14:44:31 2016 Guillaume MARDON
 */
 
 #include "minus.h"
@@ -57,6 +57,11 @@ char	*minus(char *val1, char *val2)
 	  		}
       else
 				retained = 0;
+      if (value >= 10)
+				{
+	  			retained--;
+	  			value = value % 10;
+				}
       result[index--] = value + 48;
     }
   return (remove_zeros(result));
