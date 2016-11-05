@@ -5,7 +5,7 @@
 ** Login   <victor.le-dantec@epitech.eu>
 ** 
 ** Started on  Sat Nov  5 11:06:10 2016 Victor LE DANTEC
-** Last update Sat Nov  5 11:18:13 2016 Victor LE DANTEC
+** Last update Sat Nov  5 18:35:03 2016 Victor LE DANTEC
 */
 
 #include "main.h"
@@ -25,14 +25,14 @@ char    *read_stdout(size_t buffsize)
       if ((len + total_read) > buffsize)
         {
           write(2, ERROR_MSG, my_strlen(ERROR_MSG));
-          return (84);
+          exit (84);
         }
       total_read += len;
     }
   if (total_read == 0)
     {
       write(2, ERROR_MSG, my_strlen(ERROR_MSG));
-      return (84);
+      exit (84);
     }
   buff[total_read] = '\0';
   return (my_strdup(buff));
