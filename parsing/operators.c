@@ -5,7 +5,7 @@
 ** Login   <victor.le-dantec@epitech.net>
 ** 
 ** Started on  Fri Nov  4 08:57:36 2016 Victor Le Dantec
-** Last update Fri Nov  4 15:51:27 2016 Victor Le Dantec
+** Last update Sat Nov  5 15:19:22 2016 Victor LE DANTEC
 */
 
 #include "operators.h"
@@ -26,25 +26,13 @@ void	parsing_calculate(char **str, size_t *index, size_t indexop, char op)
   op2 = getlastnumber(str, index);
   str[*index] = my_strdup(" ");
   if (op == '+')
-    {
-      //printf("%s + %s = ", op1, op2);
-      str[indexop] = my_strdup(add(op1, op2));
-      //printf("%s\n", str[indexop]);
-    }
+    str[indexop] = my_strdup(add(op1, op2));
   else if (op == '-')
-    {
-      //printf("%s - %s = ", op2, op1);
-      str[indexop] = my_strdup(minus(op2, op1));
-      //printf("%s\n", str[indexop]);
-    }
+    str[indexop] = my_strdup(minus(op2, op1));
   else if (op == '*')
-    {
-      //printf("%s * %s = ", op1, op2);
-      str[indexop] = my_strdup(multiply(op1, op2));
-      //printf("%s\n", str[indexop]);
-    }
-  //else if (op == '/')
-  //str[indexop] = my_strdup(divide(op1, op2));
-  //else if (op == '%')
-  //str[indexop] = my_strdup(modulo(op1, op2));
+    str[indexop] = my_strdup(multiply(op1, op2));
+  else if (op == '/')
+    str[indexop] = my_strdup(divide(op1, op2));
+  else if (op == '%')
+    str[indexop] = my_strdup(modulo(op2, op1));
 }

@@ -17,7 +17,7 @@ int     int_len(char *str)
 
   k = 0;
   i = 0;
-  while(str[i] != '\0')
+  while (str[i] != '\0')
     {
       if (str[i] >= '0' && str[i] <= '9')
 	{

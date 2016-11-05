@@ -7,6 +7,7 @@
 ** Started on  Mon Oct 10 18:57:12 2016 Victor Le Dantec
 ** Last update Mon Oct 10 20:16:26 2016 John Doe
 */
+
 int	my_str_isnum(char *str)
 {
   int	i;

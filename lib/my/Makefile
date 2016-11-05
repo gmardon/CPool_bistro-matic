@@ -5,7 +5,7 @@
 ## Login   <victor.le-dantec@epitech.net>
 ## 
 ## Started on  Fri Oct 14 13:53:29 2016 Victor Le Dantec
-## Last update Fri Nov  4 16:19:04 2016 Victor Le Dantec
+## Last update Sat Nov  5 11:49:22 2016 Victor LE DANTEC
 ##
 NAME	=	libmy.a
 
@@ -54,10 +54,10 @@ $(NAME):
 	@mv libmy.a ../ && echo "Moving library to ./lib .."
 
 clean:
-	@find ./ \( -name "*.o" -o -name "#*#" \) -exec echo "Cleaned {}" \; -exec rm -f -r "{}" \;
+	find ./ \( -name "*.o" -o -name "#*#" \) -exec rm -f -r "{}" \;
 
 fclean:	clean
-	@$(RM) ../$(NAME)
+	$(RM) ../$(NAME)
 	@echo "Cleaned libmy.a .."
 
 re:	fclean all

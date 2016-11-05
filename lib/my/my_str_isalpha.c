@@ -7,6 +7,7 @@
 ** Started on  Mon Oct 10 18:57:12 2016 Victor Le Dantec
 ** Last update Mon Oct 10 20:16:12 2016 John Doe
 */
+
 int	my_str_isalpha(char *str)
 {
   int	i;
@@ -14,7 +15,8 @@ int	my_str_isalpha(char *str)
   i = 0;
   while (str[i] != 0)
     {
-      if (!((str[i] >= 'a' && str[i] <= 'z') || (str[i] >= 'A' && str[i] <= 'Z')))
+      if (!((str[i] >= 'a' && str[i] <= 'z')
+	    || (str[i] >= 'A' && str[i] <= 'Z')))
 	return (0);
       i++;
     }

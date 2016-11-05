@@ -16,7 +16,7 @@ char	*my_nbrptr(char *str, char **endptr)
   char	*nbr;
   int	k;
   int	j;
-  
+
   i = k = j = 0;
   nbr = malloc(sizeof(char *) * (int_len(str) + 2));
   while (*str != '\0')
@@ -48,7 +48,7 @@ char    *my_opptr(char *str, char **endptr)
   while (*str != '\0')
     {
       if (*str == '-' || *str == '+' || *str == '*' || *str == '/'
-	  || *str == '%'  || *str == '(' || *str == ')' )
+	  || *str == '%'  || *str == '(' || *str == ')')
 	{
 	  op[k] = *str;
 	  k++;

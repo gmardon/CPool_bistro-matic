@@ -7,6 +7,7 @@
 ** Started on  Mon Oct 10 18:20:15 2016 Victor Le Dantec
 ** Last update Mon Oct 10 20:17:03 2016 John Doe
 */
+
 char	*my_strcapitalize(char *str)
 {
   int	i;

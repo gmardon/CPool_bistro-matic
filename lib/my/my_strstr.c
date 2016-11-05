@@ -1,12 +1,13 @@
 /*
 ** my_strstr.c for my_strstr in /home/victor.le-dantec/CPool_Day06
-** 
+**
 ** Made by Victor Le Dantec
 ** Login   <victor.le-dantec@epitech.net>
-** 
+**
 ** Started on  Mon Oct 10 14:22:46 2016 Victor Le Dantec
 ** Last update Mon Oct 10 15:36:18 2016 Victor Le Dantec
 */
+
 char	*my_strstr(char *str, char *to_find)
 {
   int	i;

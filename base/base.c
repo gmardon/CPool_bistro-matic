@@ -5,7 +5,7 @@
 ** Login   <moana.dumora@epitech.eu@epitech.eu>
 **
 ** Started on  Mon Oct 31 15:29:25 2016 Moana Dumora
-** Last update Fri Nov  4 15:10:32 2016 Victor Le Dantec
+** Last update Sat Nov  5 11:42:52 2016 Victor LE DANTEC
 */
 
 #include <stdlib.h>
@@ -13,60 +13,9 @@
 size_t	my_strlen(char *);
 int	my_power_rec(int, int);
 char	*my_strcat(char *, char *);
-
-char	*etvalbase(char *base)
-{
-  int	i;
-  char	*val_base;
-
-  i = 0;
-  val_base = malloc(sizeof(char *) * (my_strlen(base) + 1));
-  while (i < my_strlen(base))
-    {
-      val_base[i] = i + '0';
-      i++;
-    }
-  return (val_base);
-}
-
-char	*size_to_str(size_t total)
-{
-  size_t	tmp;
-  size_t	i;
-  char		*str;
-
-  i = 0;
-  tmp = total;
-  while (tmp > 0)
-    {
-      i++;
-      tmp = tmp / 10;
-    }
-  str = malloc(sizeof(char *) * (i + 1));
-  while (i > 0)
-    {
-      tmp = 0;
-      tmp = total % 10;
-      total = total / 10;
-      str[i - 1] = tmp + '0';
-      i--;
-    }
-  return (str);
-}
-
-int	clean_zero(char *nbr, char *base)
-{
-  size_t	i;
-
-  i = 0;
-  while (nbr[i] != '\0')
-    {
-      if (nbr[i] != base[0])
-	return (1);
-      i++;
-    }
-  return (84);
-}
+int	clean_zero(char *, char *);
+char	*size_to_str(size_t);
+char	*etvalbase(char *);
 
 char	*convert_to_ten(char *nbr, char *base)
 {
@@ -155,12 +104,13 @@ char    *my_opptr2(char *str, char **endptr)
 char	*whole_convert(char *base, char **str)
 {
   char	*final;
-  
+
   final = malloc(sizeof(char *) * (my_strlen(str[2]) + 1));
   while (str[2][0] != '\0')
     {
-      if (str[2][0] == '-' || str[2][0] == '+' || str[2][0] == '*' || str[2][0] == '/'
-	  || str[2][0] == '%' || str[2][0] == '(' || str[2][0] == ')')
+      if (str[2][0] == '-' || str[2][0] == '+' || str[2][0] == '*'
+	  || str[2][0] == '/' || str[2][0] == '%' || str[2][0] == '('
+		|| str[2][0] == ')')
 	final = my_strcat(final, my_opptr2(str[2], str));
       else
 	final = my_strcat(final, my_baseptr(str[2], str, base));

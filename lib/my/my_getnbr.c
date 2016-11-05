@@ -1,12 +1,13 @@
 /*
 ** my_getnbr.c for my_getnbr in /home/victor.le-dantec/CPool_Day07
-** 
+**
 ** Made by Victor Le Dantec
 ** Login   <victor.le-dantec@epitech.net>
-** 
+**
 ** Started on  Tue Oct 11 10:20:56 2016 Victor Le Dantec
 ** Last update Tue Oct 11 13:35:28 2016 Victor Le Dantec
 */
+
 int	my_getnbr(char *str)
 {
   int	signe;
