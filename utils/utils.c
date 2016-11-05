@@ -5,7 +5,7 @@
 ** Login   <guillaume.mardon@epitech.eu>
 **
 ** Started on  Wed Oct 26 07:01:21 2016 Guillaume MARDON
-** Last update Fri Nov  4 16:54:02 2016 Victor Le Dantec
+** Last update Sat Nov  5 17:48:27 2016 Guillaume MARDON
 */
 #include "utils.h"
 
@@ -130,23 +130,21 @@ void	*put_nbr_with_offset(char *str, int number, int zcount)
 
 void	*put_chars_with_offset(char *str, char *with, int zcount)
 {
-  printf("zcount: %d\n", zcount);
   int length;
   int index;
+  length = my_strlen(with);
 
-  length = my_strlen(str);
   index = 0;
-  while (zcount != index)
-    {
-      str[length - (index++)] = '0';
-    }
-  printf("len:%d\n", length);
   while (index < length)
     {
-      str[length - (index++)] = *with;
-      with++;
+      str[index] = *(with + index);
+      index++;
     }
-  printf("str:%s", str);
+  while (zcount != 0)
+    {
+        str[index++] = '0';
+      	zcount--;
+    }
   return (str);
 }
 
