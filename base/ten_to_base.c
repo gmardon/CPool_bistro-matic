@@ -28,15 +28,15 @@ size_t	char_to_size(char *nbr)
   return (total);
 }
 
-size_t	get_result_size(size_t n, size_t b, size_t d)
+size_t	get_result_size(char *nbr, char *size_base, char *newnbr)
 {
   size_t	i;
 
   i = 0;
-  while (n != 0)
+  while (nbr[0] != '0')
     {
-      d = n / b;
-      n = d;
+      newnbr = divide(nbr, size_base);
+      nbr = newnbr;
       i++;
     }
   return (i);
@@ -44,30 +44,31 @@ size_t	get_result_size(size_t n, size_t b, size_t d)
 
 char	*ten_to_base(char *nbr, char *base)
 {
-  size_t	n;
-  char		*m;
-  size_t	d;
-  size_t	r;
-  size_t	b;
+  char		*final;
+  char		*newnbr;
+  char		*remainder;
+  char		*size_base;
   size_t	i;
+  size_t	r;
 
-  b = my_strlen(base);
-  n = char_to_size(nbr);
-  i = get_result_size(n, b, d) - 1;
-  m = malloc(sizeof(char *) * (i + 1));
-  while (n != 0)
-    {
-      d = n / b;
-      r = n % b;
-      n = d;
-      m[i] = base[r];
-      i--;
-    }
+  size_base = size_to_str(my_strlen(base));
+  newnbr = malloc(sizeof(char *) * (my_strlen(nbr) + 1));
+  i = get_result_size(nbr, size_base, newnbr) - 1;
+  final = malloc(sizeof(char *) * (i + 1));
   if (nbr[0] == '0')
     {
-      m[0] = base[0];
-      m[1] = '\0';
-      return (m);
+      final[0] = base[0];
+      final[1] = '\0';
+      return (final);
     }
-  return (m);
+  while (nbr[0] != '0')
+    {
+      newnbr = divide(nbr,size_base);
+      remainder = modulo(nbr, size_base);
+      nbr = newnbr;
+      r = char_to_size(remainder);
+      final[i] = base[r];
+      i--;
+    }
+  return (final);
 }
