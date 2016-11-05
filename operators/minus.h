@@ -5,7 +5,7 @@
 ** Login   <guillaume.mardon@epitech.eu@epitech.eu>
 **
 ** Started on  Sun Oct 30 14:30:45 2016 Guillaume MARDON
-** Last update Fri Nov  4 15:25:28 2016 Victor Le Dantec
+** Last update Sat Nov  5 18:38:48 2016 Guillaume MARDON
 */
 
 #include <stdlib.h>
@@ -16,6 +16,6 @@ char	*remove_zeros(char *);
 size_t	*my_strlen(char *);
 char	*equalise_numbers(char *, char *);
 char	*set_negative(char *);
-int	is_greater(char *,char *);
+int	is_greater(char *, char *);
 char	*add(char *, char *);
 int	is_neg(char *);

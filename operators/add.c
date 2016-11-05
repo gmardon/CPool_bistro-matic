@@ -5,7 +5,7 @@
 ** Login   <guillaume.mardon@epitech.eu@epitech.eu>
 **
 ** Started on  Sun Oct 30 14:27:30 2016 Guillaume MARDON
-** Last update Fri Nov  4 15:35:03 2016 Victor Le Dantec
+** Last update Sat Nov  5 19:08:36 2016 Guillaume MARDON
 */
 #include "../utils/utils.h"
 #include "add.h"
@@ -54,7 +54,7 @@ char	*add(char *val1, char *val2)
       result[index + 1] = value + 48;
       index--;
       if (index == -1 && retained != 0)
-	result[0] = retained + 48;
+				result[0] = retained + 48;
     }
   return (remove_zeros(result));
 }

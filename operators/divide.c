@@ -5,7 +5,7 @@
 ** Login   <guillaume.mardon@epitech.eu@epitech.eu>
 **
 ** Started on  Sun Oct 30 14:32:57 2016 Guillaume MARDON
-** Last update Sat Nov  5 18:13:11 2016 Guillaume MARDON
+** Last update Sat Nov  5 19:12:28 2016 Guillaume MARDON
 */
 
 #include "divide.h"
@@ -60,5 +60,5 @@ char	*divide(char *val1, char *val2)
       result[result_index++] = (count - 1) + 48;
       diff--;
     }
-		return (result);
+  return (remove_zeros(result));
 }
