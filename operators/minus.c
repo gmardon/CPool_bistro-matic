@@ -5,7 +5,7 @@
 ** Login   <guillaume.mardon@epitech.eu@epitech.eu>
 **
 ** Started on  Sun Oct 30 14:28:34 2016 Guillaume MARDON
-** Last update Fri Nov  4 15:22:50 2016 Victor Le Dantec
+** Last update Sat Nov  5 11:50:17 2016 Guillaume MARDON
 */
 
 #include "minus.h"
@@ -51,7 +51,7 @@ char	*minus(char *val1, char *val2)
     {
       value = (val1[index] - 48) - ((val2[index] - 48) + retained);
       retained = 0;
-		  value = (value < 0 ? ((val1[index] - 48) + 10) - ((val2[index] - 48) + retained++) : value);
+      value = (value < 0 ? ((val1[index] - 48) + 10) - ((val2[index] - 48) + ((index == length - 1) ? retained++ : ++retained)) : value);
       value = (value >= 10 ? value % 10 : value);
       result[index] = value + 48;
       index--;
