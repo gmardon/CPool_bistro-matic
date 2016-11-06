@@ -5,12 +5,15 @@
 ** Login   <moana.dumora@epitech.eu@epitech.eu>
 **
 ** Started on  Sun Nov  6 09:33:36 2016 Moana Dumora
-** Last update Sun Nov  6 09:33:40 2016 Moana Dumora
+** Last update Sun Nov  6 19:34:26 2016 Victor LE DANTEC
 */
 
 #include <stdlib.h>
 
 size_t	my_strlen(char *);
+char	*multiply(char *, char *);
+char	*my_strdup(char *);
+size_t	char_to_size(char *);
 
 size_t	get_result_size2(char *nbr, char *pow)
 {
