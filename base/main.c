@@ -10,7 +10,9 @@ ssize_t	char_to_size(char *);
 
 char	*ten_to_base(char *, char*);
 
+void	base_op_convert(char *, char *);
+
 int	main(int ac, char **av)
 {
-  printf("%s\n", whole_convert(av[1], av));
+  printf("%s\n", convert_to_ten(av[1], av[2]));
 }
