@@ -9,6 +9,7 @@
 */
 #include "../utils/utils.h"
 #include "add.h"
+#include "lines.h"
 
 char	*add_handle_negative(char *val1, char *val2)
 {
@@ -29,11 +30,7 @@ char	*add_handle_negative(char *val1, char *val2)
 
 char	*add(char *val1, char *val2)
 {
-  char	*result;
-  int	index;
-  int	length;
-  int	value;
-  int	retained;
+  t_lines	pl;
 
   if (is_neg(val1) || is_neg(val2))
     return (add_handle_negative(val1, val2));
@@ -41,20 +38,20 @@ char	*add(char *val1, char *val2)
     val1 = equalise_numbers(val1, val2);
   else if (my_strlen(val1) > my_strlen(val2))
     val2 = equalise_numbers(val1, val2);
-  length = my_strlen(val1);
-  result = malloc(8 * (length + 1));
-  str_set_zero(result, length + 1);
-  index = length - 1;
-  retained = 0;
-  while (index >= 0)
+  pl.length = my_strlen(val1);
+  pl.result = malloc(8 * (pl.length + 1));
+  str_set_zero(pl.result, pl.length + 1);
+  pl.index = pl.length - 1;
+  pl.retained = 0;
+  while (pl.index >= 0)
     {
-      value = (val1[index] - 48) + (val2[index] - 48) + retained;
-      retained = (value >= 10 ? value / 10 : 0);
-      value = (value >= 10 ? value % 10 : value);
-      result[index + 1] = value + 48;
-      index--;
-      if (index == -1 && retained != 0)
-				result[0] = retained + 48;
+      pl.value = (val1[pl.index] - 48) + (val2[pl.index] - 48) + pl.retained;
+      pl.retained = (pl.value >= 10 ? pl.value / 10 : 0);
+      pl.value = (pl.value >= 10 ? pl.value % 10 : pl.value);
+      pl.result[pl.index + 1] = pl.value + 48;
+      pl.index--;
+      if (pl.index == -1 && pl.retained != 0)
+	pl.result[0] = pl.retained + 48;
     }
-  return (remove_zeros(result));
+  return (remove_zeros(pl.result));
 }
