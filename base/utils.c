@@ -35,6 +35,8 @@ char    *size_to_str(size_t total)
 
   i = 0;
   tmp = total;
+  if (total == 0)
+    return (my_strdup("0"));
   while (tmp > 0)
     {
       i++;

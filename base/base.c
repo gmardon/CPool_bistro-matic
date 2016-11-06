@@ -36,17 +36,18 @@ char	*convert_to_ten(char *nbr, char *base)
   char		*val_base;
   char		*final;
 
-  pow = malloc(100);
+  pow = malloc(sizeof(char *) * (my_strlen(nbr) + 1));
   val_base = malloc(sizeof(char *) * 2);
   val_base = etvalbase(base);
   pow = size_to_str(my_strlen(nbr) - 1);
   index = kindex = 0;
-  total = malloc(2000);
+  total = malloc(sizeof(char *) * (my_strlen(base) / 10));
   while (nbr[index] != '\0')
     {
       if (nbr[index] == base[kindex])
 	{
-	  total = add(total ,multiply(power(size_to_str(my_strlen(base)), pow), size_to_str(val_base[kindex] - 48)));
+	  total = add(total ,multiply(power(size_to_str(my_strlen(base)), pow),
+				      size_to_str(val_base[kindex] - 48)));
 	  pow = minus(pow, my_strdup("1"));
 	  kindex = 0;
 	  index++;
