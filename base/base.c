@@ -8,6 +8,7 @@
 ** Last update Sun Nov  6 20:13:49 2016 Victor LE DANTEC
 */
 
+#include "struct.h"
 #include "base.h"
 
 char	*char_to_str(char c)
@@ -22,35 +23,30 @@ char	*char_to_str(char c)
 
 char	*convert_to_ten(char *nbr, char *base)
 {
-  char  	*total;
-  size_t	index;
-  size_t	kindex;
-  char		*pow;
-  char		*val_base;
-  char		*final;
+  t_winlines	pb;
 
-  pow = malloc(sizeof(char *) * (my_strlen(nbr) + 1));
-  val_base = malloc(sizeof(char *) * 2);
-  val_base = etvalbase(base);
-  pow = size_to_str(my_strlen(nbr) - 1);
-  index = kindex = 0;
-  total = malloc(sizeof(char *) * (my_strlen(base) / 10));
-  while (nbr[index] != '\0')
+  pb.pow = malloc(sizeof(char *) * (my_strlen(nbr) + 1));
+  pb.val_base = malloc(sizeof(char *) * 2);
+  pb.val_base = etvalbase(base);
+  pb.pow = size_to_str(my_strlen(nbr) - 1);
+  pb.index = pb.kindex = 0;
+  pb.total = malloc(sizeof(char *) * (my_strlen(base) / 10));
+  while (nbr[pb.index] != '\0')
     {
-      if (nbr[index] == base[kindex])
+      if (nbr[pb.index] == base[pb.kindex])
 	{
-	  total = add(total ,multiply(power(size_to_str(my_strlen(base)), pow),
-				      size_to_str(val_base[kindex] - 48)));
-	  pow = minus(pow, my_strdup("1"));
-	  kindex = 0;
-	  index++;
+	  pb.total = add(pb.total ,multiply(power(size_to_str(my_strlen(base)), pb.pow),
+				      size_to_str(pb.val_base[pb.kindex] - 48)));
+	  pb.pow = minus(pb.pow, my_strdup("1"));
+	  pb.kindex = 0;
+	  pb.index++;
 	}
       else
-	kindex++;
+	pb.kindex++;
     }
-  val_base[0] = base[0];
-  val_base[1] = '\0';
-  return ((clean_zero(nbr, base) == 1) ? total : val_base);
+  pb.val_base[0] = base[0];
+  pb.val_base[1] = '\0';
+  return ((clean_zero(nbr, base) == 1) ? pb.total : pb.val_base);
 }
 
 char    *my_baseptr(char *str, char **endptr, char *base)
