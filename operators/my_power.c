@@ -5,29 +5,14 @@
 ** Login   <moana.dumora@epitech.eu@epitech.eu>
 **
 ** Started on  Sun Nov  6 09:33:36 2016 Moana Dumora
-** Last update Sun Nov  6 09:33:40 2016 Moana Dumora
+** Last update Sun Nov  6 14:07:31 2016 Victor LE DANTEC
 */
 
 #include <stdlib.h>
 
 size_t	my_strlen(char *);
 
-size_t  char_to_size(char *nbr)
-{
-  size_t        index;
-  size_t        total;
-
-  index = 0;
-  total = 0;
-  while (index <= my_strlen(nbr) - 1)
-    {
-      total = total * 10 + (nbr[index] - '0');
-      index++;
-    }
-  return (total);
-}
-
-size_t	get_result_size(char *nbr, char *pow)
+size_t	get_result_size2(char *nbr, char *pow)
 {
   size_t	i;
   size_t	cpow;
@@ -48,7 +33,7 @@ char	*power(char *nbr, char *pow)
   size_t	aloc;
   size_t	save;
 
-  aloc = get_result_size(nbr, pow);
+  aloc = get_result_size2(nbr, pow);
   final = malloc(sizeof(char *) * (aloc + 1));
   aloc = char_to_size(pow);
   save = aloc;

@@ -19,23 +19,22 @@ char	*etvalbase(char *);
 
 char	*convert_to_ten(char *nbr, char *base)
 {
-  char  	*total;
+  size_t	total;
   size_t	index;
   size_t	kindex;
   size_t	pow;
   char		*val_base;
   char		*final;
 
-  pow = size_to_str(my_strlen(nbr) - 1);
+  pow = my_strlen(nbr) - 1;
   val_base = malloc(sizeof(char *) * (my_strlen(base) + 1));
-  index = kindex = 0;
-  total = malloc(2000);
+  total = index = kindex = 0;
   val_base = etvalbase(base);
   while (nbr[index] != '\0')
     {
       if (nbr[index] == base[kindex])
 	{
-	  total = add(total ,multiply(power(my_strlen(base), pow--), (val_base[kindex] - 48)));
+	  total += my_power_rec(my_strlen(base), pow--) * (val_base[kindex] - 48);
 	  kindex = 0;
 	  index++;
 	}
@@ -44,7 +43,7 @@ char	*convert_to_ten(char *nbr, char *base)
     }
   val_base[0] = base[0];
   val_base[1] = '\0';
-  return ((clean_zero(nbr, base) == 1) ? total : val_base);
+  return ((clean_zero(nbr, base) == 1) ? size_to_str(total) : val_base);
 }
 
 char    *my_baseptr(char *str, char **endptr, char *base)

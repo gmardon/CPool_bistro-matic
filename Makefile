@@ -5,7 +5,7 @@
 ## Login   <victor.le-dantec@epitech.net>
 ##
 ## Started on  Mon Oct 24 10:23:27 2016 Victor Le Dantec
-## Last update Sun Nov  6 11:13:25 2016 Victor LE DANTEC
+## Last update Sun Nov  6 14:06:26 2016 Victor LE DANTEC
 ##
 
 NAME		=	calc
@@ -18,6 +18,7 @@ SRC		=	main.c			\
 			operators/minus.c	\
 			operators/divide.c	\
 			operators/modulo.c	\
+			operators/my_power.c	\
 			utils/utils.c		\
 			utils/utils2.c		\
 			utils/utils3.c		\

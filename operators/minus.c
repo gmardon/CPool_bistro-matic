@@ -5,11 +5,7 @@
 ** Login   <guillaume.mardon@epitech.eu@epitech.eu>
 **
 ** Started on  Sun Oct 30 14:28:34 2016 Guillaume MARDON
-<<<<<<< refs/remotes/origin/master
 ** Last update Sat Nov  5 19:27:20 2016 Victor LE DANTEC
-=======
-** Last update Sun Nov  6 11:53:51 2016 Guillaume MARDON
->>>>>>> fix minus
 */
 
 #include "minus.h"
@@ -19,11 +15,7 @@ char	*minus_handle_negative(char *val1, char *val2)
   if (!is_neg(val1) && is_neg(val2))
     return (add(val1, val2 + 1));
   else if (is_neg(val1) && !is_neg(val2))
-<<<<<<< refs/remotes/origin/master
     return (minus_handle_negative(val2, val1));
-=======
-      return (set_negative(minus_handle_negative(val2, val1)));
->>>>>>> fix minus
   else if (is_neg(val1) && is_neg(val2))
     {
       if (is_greater(val1 + 1, val2 + 1) == 1)
@@ -51,10 +43,11 @@ char	*minus(char *val1, char *val2)
     val1 = equalise_numbers(val1, val2);
   else if (my_strlen(val1) > my_strlen(val2))
     val2 = equalise_numbers(val1, val2);
-  length = index = my_strlen(val1);
+  length = my_strlen(val1);
   result = malloc(8 * (length + 1));
+  index = length - 1;
   retained = 0;
-  while (index-- > -1)
+  while (index > -1)
     {
       value = (val1[index] - 48) - ((val2[index] - 48) + retained);
       if (val1[index] <= val2[index])
@@ -65,19 +58,11 @@ char	*minus(char *val1, char *val2)
       else
 	retained = 0;
       if (value >= 10)
-<<<<<<< refs/remotes/origin/master
 	{
 	  retained--;
 	  value = value % 10;
 	}
       result[index--] = value + 48;
-=======
-				{
-	  			retained--;
-	  			value = value % 10;
-				}
-      result[index] = value + 48;
->>>>>>> fix minus
     }
   return (remove_zeros(result));
 }
