@@ -5,7 +5,7 @@
 ## Login   <victor.le-dantec@epitech.net>
 ##
 ## Started on  Mon Oct 24 10:23:27 2016 Victor Le Dantec
-## Last update Sat Nov  5 11:56:10 2016 Victor LE DANTEC
+## Last update Sun Nov  6 11:13:25 2016 Victor LE DANTEC
 ##
 
 NAME		=	calc
@@ -19,6 +19,8 @@ SRC		=	main.c			\
 			operators/divide.c	\
 			operators/modulo.c	\
 			utils/utils.c		\
+			utils/utils2.c		\
+			utils/utils3.c		\
 			base/base.c		\
 			base/utils.c		\
 			base/ten_to_base.c	\
@@ -28,6 +30,7 @@ SRC		=	main.c			\
 			parsing/int_len.c	\
 			parsing/my_numberptr.c	\
 			parsing/parser.c	\
+			parsing/parser2.c	\
 			parsing/utils.c		\
 			parsing/operators.c
 

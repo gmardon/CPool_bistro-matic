@@ -5,7 +5,7 @@
 ** Login   <victor.le-dantec@epitech.net>
 ** 
 ** Started on  Fri Nov  4 08:57:36 2016 Victor Le Dantec
-** Last update Sat Nov  5 18:08:42 2016 Victor LE DANTEC
+** Last update Sat Nov  5 19:19:32 2016 Victor LE DANTEC
 */
 
 #include "operators.h"

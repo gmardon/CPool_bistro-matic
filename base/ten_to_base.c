@@ -5,13 +5,16 @@
 ** Login   <moana.dumora@epitech.eu@epitech.eu>
 **
 ** Started on  Tue Nov  1 19:43:28 2016 Moana Dumora
-** Last update Thu Nov  3 15:01:57 2016 Victor Le Dantec
+** Last update Sat Nov  5 20:08:03 2016 Victor LE DANTEC
 */
 
 #include <stdio.h>
 #include <stdlib.h>
 
 size_t	my_strlen(char *);
+char	*divide(char *, char *);
+char	*modulo(char *, char *);
+char	*size_to_str(size_t);
 
 size_t	char_to_size(char *nbr)
 {
