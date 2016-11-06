@@ -5,7 +5,7 @@
 ** Login   <victor.le-dantec@epitech.eu>
 ** 
 ** Started on  Sat Nov  5 11:06:10 2016 Victor LE DANTEC
-** Last update Sat Nov  5 18:35:03 2016 Victor LE DANTEC
+** Last update Sun Nov  6 13:09:47 2016 Victor LE DANTEC
 */
 
 #include "main.h"
@@ -13,29 +13,28 @@
 
 int	all_check(char *, char *, char *);
 
-char    *read_stdout(size_t buffsize)
+static char	*read_stdout(size_t size)
 {
-  char          buff[buffsize + 1];
-  int           total_read;
-  ssize_t       len;
+  char	*expr;
 
-  total_read = 0;
-  while ((len = read(0, (buff + total_read), buffsize)) != 0)
-    {
-      if ((len + total_read) > buffsize)
-        {
-          write(2, ERROR_MSG, my_strlen(ERROR_MSG));
-          exit (84);
-        }
-      total_read += len;
-    }
-  if (total_read == 0)
+  if (size <= 0)
     {
       write(2, ERROR_MSG, my_strlen(ERROR_MSG));
       exit (84);
     }
-  buff[total_read] = '\0';
-  return (my_strdup(buff));
+  expr = malloc(size + 1);
+  if (expr == 0)
+    {
+      write(2, ERROR_MSG, my_strlen(ERROR_MSG));
+      exit (84);
+    }
+  if (read(0, expr, size) != size)
+    {
+      write(2, ERROR_MSG, my_strlen(ERROR_MSG));
+      exit (84);
+    }
+  expr[size] = 0;
+  return (expr);
 }
 
 char    *remove_minus(char *buffer)

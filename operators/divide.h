@@ -5,7 +5,7 @@
 ** Login   <victor.le-dantec@epitech.net>
 **
 ** Started on  Fri Nov  4 17:01:04 2016 Victor Le Dantec
-** Last update Sat Nov  5 19:16:10 2016 Guillaume MARDON
+** Last update Sat Nov  5 19:23:48 2016 Victor LE DANTEC
 */
 
 #include <stdlib.h>
@@ -19,3 +19,7 @@ char	*add(char *, char *);
 char	*my_strdup(char *);
 char	*str_set_zero(char *, size_t);
 char	*minus(char *, char *);
+char	*remove_zeros(char *);
+char	*set_negative(char *);
+int	*is_neg(char *);
+char	*clean_negation(char *);
