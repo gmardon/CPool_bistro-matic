@@ -19,3 +19,17 @@ char	*set_negative(char *);
 int	is_greater(char *, char *);
 char	*add(char *, char *);
 int	is_neg(char *);
+
+#ifndef MINUS_H_
+#define MINUS_H_
+
+typedef	struct	s_for_sake_of_norm
+{
+  char          *result;
+  int           index;
+  size_t        length;
+  int           value;
+  int           retained;
+}t_for_sake_of_norm;
+
+#endif	/* MINUS_H_ */
