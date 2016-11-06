@@ -5,7 +5,7 @@
 ** Login   <victor.le-dantec@epitech.eu>
 **
 ** Started on  Sun Nov  6 10:57:39 2016 Victor LE DANTEC
-** Last update Sun Nov  6 12:05:02 2016 Victor LE DANTEC
+** Last update Sun Nov  6 18:20:02 2016 Victor LE DANTEC
 */
 
 #include <stdlib.h>
@@ -62,14 +62,9 @@ char	**processing_rpn(char **str, char *stackop, size_t index, size_t indexop)
 	    {
 	      if (str[1][0] == '-' && stackop[my_strlen(stackop) - 1] == '('
 		  && (str[1][1] >= '0' && str[1][1] <= '9'))
-		{
-		  printf("test\n");
-		  index = push_stack_index(str, stack, index);
-		}
+		index = push_stack_index(str, stack, index);
 	      else if (str[1][0] == '-' && index == 0 && (str[1][1] >= '0' && str[1][1] <= '9'))
-		{
-		  index = push_stack_index(str, stack, index);
-		}
+		index = push_stack_index(str, stack, index);
 	      else
 		pushstackop(str, stackop, indexop);
 	      indexop++;
@@ -79,6 +74,5 @@ char	**processing_rpn(char **str, char *stackop, size_t index, size_t indexop)
   indexop = 0;
   while (stackop[0] != '\0')
     index = pop_stack_op_index(str, stackop, stack, index);
-  my_show_wordtab(stack);
   return (stack);
 }
