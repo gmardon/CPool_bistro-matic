@@ -5,12 +5,13 @@
 ** Login   <victor.le-dantec@epitech.eu>
 ** 
 ** Started on  Sat Nov  5 11:30:44 2016 Victor LE DANTEC
-** Last update Sat Nov  5 11:31:52 2016 Victor LE DANTEC
+** Last update Sun Nov  6 20:15:24 2016 Victor LE DANTEC
 */
 
 #include <stdlib.h>
 
 size_t	my_strlen(char *);
+char	*my_strdup(char *);
 
 char    *etvalbase(char *base)
 {
