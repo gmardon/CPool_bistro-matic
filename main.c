@@ -5,7 +5,7 @@
 ** Login   <guillaume.mardon@epitech.eu>
 **
 ** Started on  Mon Oct 24 10:03:22 2016 Guillaume MARDON
-** Last update Sun Nov  6 13:11:25 2016 Victor LE DANTEC
+** Last update Sun Nov  6 21:32:25 2016 Victor LE DANTEC
 */
 
 #include "main.h"
@@ -22,6 +22,11 @@ int	main(int argc, char **argv)
   if (argc != 4 || my_strlen(argv[2]) != 7)
     {
       write(2, SYNTAX_ERROR_MSG, my_strlen(SYNTAX_ERROR_MSG));
+      return (84);
+    }
+  if (argv[3][0] == '0')
+    {
+      write(2, ERROR_MSG, my_strlen(ERROR_MSG));
       return (84);
     }
   my_putstr(processing(argv));
